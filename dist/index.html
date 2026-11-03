@@ -10,12 +10,21 @@
   input, select, button { font: inherit; }
   #query { width: min(100%, 400px); box-sizing: border-box; }
   #finder label { display: inline-block; white-space: nowrap; }
+  #finder .octave-option { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; }
+  .octave-option input { margin: 0; }
+  .octave-arrow { display: inline-flex; align-items: center; line-height: 1; font-family: Arial, sans-serif; }
   .table-scroll { overflow-x: auto; }
   table { width: 100%; background: white; }
   th { text-align: left; background: #e4e4ef; }
   .number { text-align: right; }
   .notes { white-space: nowrap; }
-  .power { min-width: 32px; }
+  .power { width: 1%; }
+  .power-swatch { display: block; width: 28px; height: 28px; box-sizing: border-box; margin: auto; border: 1px solid #777; }
+  .power-scale { display: block; height: 5px; margin-top: 4px; background: linear-gradient(to right, #173b8f, #3186bc 25%, #7bc8a4 50%, #f9d057 75%, #ef7b32 90%, #ce2e26); }
+  #excluded-table { background: #f1f1f1; border: 2px dotted #888; margin-top: 16px; }
+  #excluded-table th, #excluded-table td { border: 1px dotted #888; }
+  #excluded-table th { background: #e7e7e7; }
+  #excluded-table caption { color: #666; text-align: left; padding: 6px 0; }
   a { color: #0000b0; }
   summary { cursor: pointer; }
   .range-picker { margin: 20px 18px; }
@@ -35,7 +44,7 @@
 <hr>
 <form id="finder">
   <p><label for="query">Search</label> <input type="search" id="query" name="query" placeholder="Artist, song, or both…" autocomplete="off"></p>
-  <p><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output></p>
+  <p><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output> <label><input type="checkbox" id="sound" checked> Piano</label></p>
   <div class="range-picker" role="group" aria-labelledby="range-label">
     <div id="presets-above"></div>
     <div id="range-slider"></div>
@@ -47,30 +56,41 @@
     <label for="singer">Singer</label>
     <select id="singer" name="singer"><option value="">Any</option><option value="M">Male</option><option value="F">Female</option><option value="U">Unknown</option></select>
     <label><input type="checkbox" id="original" checked> Original</label>
-    <label><input type="checkbox" id="down1" checked> ↓1 octave</label>
-    <label><input type="checkbox" id="down2"> ↓2 octaves</label>
-    <label title="Octave-down versions must peak within 3 semitones of your highest note."><input type="checkbox" id="energetic" checked> Keep energetic (3 semitones)</label>
+    <label class="octave-option" title="Allow one octave higher or lower"><input type="checkbox" id="octave1" aria-label="Allow one octave higher or lower" checked><span class="octave-arrow" aria-hidden="true">↕</span><span>1 octave</span></label>
+    <label class="octave-option" title="Allow two octaves higher or lower"><input type="checkbox" id="octave2" aria-label="Allow two octaves higher or lower"><span class="octave-arrow" aria-hidden="true">↕</span><span>2 octaves</span></label>
+    <label title="Octave-shifted versions must peak within 3 semitones of your highest note."><input type="checkbox" id="energetic" checked> Keep energetic </label>
   </p>
 </form>
 <p><small>Sounding pitch · C4 = middle C</small></p>
 <p id="status" role="status" aria-live="polite">Loading songs…</p>
 <div class="table-scroll">
 <table border="1" cellspacing="0" cellpadding="6" id="results" hidden>
-  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col">Range</th><th scope="col">Octave</th><th scope="col" id="popularity-header" aria-sort="descending"><button type="button" id="sort-popularity">Popularity ↓</button></th><th scope="col" id="power-header" aria-sort="none"><button type="button" id="sort-power" title="Sort by highest note, then lowest note">Power ↕</button></th></tr></thead>
+  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col" id="range-header" aria-sort="none"><button type="button" id="sort-range" title="Sort by highest note, then lowest note">Range ↕</button></th><th scope="col">Octave</th><th scope="col" id="popularity-header" aria-sort="descending"><button type="button" id="sort-popularity">Popularity score ↓</button></th><th scope="col" class="power">Power<span class="power-scale" role="img" aria-label="Lower: blue. Higher: yellow, orange, red." title="Lower → Higher"></span></th></tr></thead>
   <tbody id="songs"></tbody>
+</table>
+</div>
+<div class="table-scroll" id="excluded-results" hidden>
+<table border="1" cellspacing="0" cellpadding="6" id="excluded-table">
+  <caption id="excluded-caption">Filtered out</caption>
+  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col">Range</th><th scope="col">Octave</th><th scope="col">Popularity score</th><th scope="col" class="power">Power</th></tr></thead>
+  <tbody id="excluded-songs"></tbody>
 </table>
 </div>
 <hr>
 <details>
   <summary>Data</summary>
   <p><small>Sorted by Deezer popularity score; unranked songs last. Scores are a popularity proxy, not play counts or sales. Updated <span id="updated">—</span>.</small></p>
-  <p><small>761 published ranges from <a href="https://singingcarrots.com/">Singing Carrots</a>, drawn from the KaraFun top 1,000 catalogue. Missing, conflicting, and octave-ambiguous ranges excluded. Arrangements can differ. Song links show range sources; score links show the matched Deezer recording.</small></p>
+  <p><small>761 published ranges from <a href="https://singingcarrots.com/">Singing Carrots</a>, drawn from the KaraFun top 1,000 catalogue. Missing, conflicting, and octave-ambiguous ranges excluded. Arrangements can differ. Song links search KaraFun’s YouTube channel. Popularity values are unitless Deezer scores.</small></p>
   <p><small><a href="https://blog.singingcarrots.com/what-is-vocal-range/">Preset ranges</a> are starting points. Singer labels come from source metadata; unclassified entries are Unknown. Published source octaves are preserved and can contain errors.</small></p>
-  <p><small>Octave-down matches must fit completely and, with Keep energetic enabled, peak at most 3 semitones below your upper limit. This peak-based estimate cannot establish chorus energy. Two octaves down is an uncommon, optional fit. Each song shows its highest allowed fitting octave.</small></p>
-  <p><small>Power runs from dark blue (lower) to red (higher) within your selected range. It compares the displayed highest note first, then the lowest note. Click Power to sort up/down; click Popularity to restore popularity order.</small></p>
+  <p><small>Octave-shifted matches must fit completely and, with Keep energetic enabled, peak at most 3 semitones below your upper limit. This peak-based estimate cannot establish chorus energy. Two-octave shifts are uncommon and optional. Each song prefers original pitch, then the smallest fitting octave shift, up or down.</small></p>
+  <p><small>Power runs from cool blue through green and yellow to warm orange/red as the displayed range rises within your selection. Click Range to sort by highest note, then lowest note; click Popularity score to restore popularity order.</small></p>
+  <p><small>During search, the most popular matching song excluded by your filters appears separately below the results. The caption identifies the excluding filters; if no allowed octave fits, its published range is shown.</small></p>
+  <p><small>Piano: <a href="https://github.com/Tonejs/audio/tree/master/salamander">Salamander Grand Piano</a> by Alexander Holm, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Slider handles play notes; presets stay silent.</small></p>
 </details>
 <noscript><p>Enable JavaScript to find songs.</p></noscript>
 <script src="songs.js"></script>
 <script src="vendor/nouislider.min.js"></script>
+<script src="vendor/piano-samples.js"></script>
+<script src="piano.js"></script>
 <script src="app.js"></script>
 </html>
