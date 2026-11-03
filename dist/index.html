@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kara Range</title>
+<style>
+  body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #fffbea; color: #171717; }
+  h1 { color: #000080; }
+  select, button { font: inherit; }
+  table { width: 100%; background: white; }
+  th { text-align: left; background: #e4e4ef; }
+  td:last-child, th:last-child { text-align: right; }
+  a { color: #0000b0; }
+  summary { cursor: pointer; }
+</style>
+<h1>♪ KARA RANGE</h1>
+<hr>
+<form id="finder">
+  <label for="low">Lowest</label> <select id="low" name="low" aria-label="Lowest note"></select>
+  <label for="high">Highest</label> <select id="high" name="high" aria-label="Highest note"></select>
+  <button type="submit">Find songs</button>
+</form>
+<p><small>Original keys · C4 = middle C</small></p>
+<p id="status" role="status" aria-live="polite">Loading songs…</p>
+<table border="1" cellspacing="0" cellpadding="6" id="results" hidden>
+  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col">Range</th><th scope="col">Popularity ↓</th></tr></thead>
+  <tbody id="songs"></tbody>
+</table>
+<hr>
+<details>
+  <summary>Data</summary>
+  <p><small>Sorted by Deezer popularity score; unranked songs last. Scores are a popularity proxy, not play counts or sales. Updated <span id="updated">—</span>.</small></p>
+  <p><small>761 published ranges from <a href="https://singingcarrots.com/">Singing Carrots</a>, drawn from the KaraFun top 1,000 catalogue. Missing, conflicting, and octave-ambiguous ranges excluded. Arrangements can differ. Song links show range sources; score links show the matched Deezer recording.</small></p>
+</details>
+<noscript><p>Enable JavaScript to find songs.</p></noscript>
+<script src="songs.js"></script>
+<script>
+  const names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  const low = document.getElementById('low');
+  const high = document.getElementById('high');
+  const status = document.getElementById('status');
+  const results = document.getElementById('results');
+  const body = document.getElementById('songs');
+
+  function pitch(note) {
+    const match = /^([A-G])([#b]?)(\d)$/.exec(note);
+    if (!match) return NaN;
+    const offset = {C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11};
+    return (+match[3] + 1) * 12 + offset[match[1]] + (match[2] === '#' ? 1 : match[2] === 'b' ? -1 : 0);
+  }
+
+  function fits(song, bottom, top) {
+    return song.range.split(';').every(voice => {
+      const [a, b] = voice.trim().split('-').map(pitch);
+      return a >= bottom && b <= top;
+    });
+  }
+
+  for (let midi = 12; midi <= 119; midi++) {
+    const note = names[midi % 12] + (Math.floor(midi / 12) - 1);
+    low.add(new Option(note, note));
+    high.add(new Option(note, note));
+  }
+  low.value = 'C3';
+  high.value = 'C5';
+
+  function link(text, url) {
+    const a = document.createElement('a');
+    a.textContent = text;
+    a.href = url;
+    return a;
+  }
+
+  function search(event) {
+    if (event) event.preventDefault();
+    body.replaceChildren();
+    results.hidden = true;
+    if (!window.catalogue) {
+      status.textContent = 'Song data unavailable. Reload to try again.';
+      return;
+    }
+    const bottom = pitch(low.value), top = pitch(high.value);
+    if (bottom > top) {
+      status.textContent = 'Lowest note must be below highest note.';
+      return;
+    }
+    const songs = window.catalogue.songs.filter(song => fits(song, bottom, top));
+    status.textContent = songs.length ? `${songs.length} songs` : 'No matches. Try a wider range.';
+    const fragment = document.createDocumentFragment();
+    for (const song of songs) {
+      const row = document.createElement('tr');
+      const values = [link(song.title, song.source), song.artist, song.range,
+        song.rank === null ? '—' : link(song.rank.toLocaleString(), song.deezer)];
+      for (const value of values) {
+        const cell = document.createElement('td');
+        cell.append(value);
+        row.append(cell);
+      }
+      fragment.append(row);
+    }
+    body.append(fragment);
+    results.hidden = songs.length === 0;
+  }
+  document.getElementById('finder').addEventListener('submit', search);
+  if (window.catalogue) document.getElementById('updated').textContent = window.catalogue.updated || 'unknown';
+  search();
+</script>
+</html>
