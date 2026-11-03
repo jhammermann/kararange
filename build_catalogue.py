@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import time
 import unicodedata
+from urllib.parse import unquote
 
 import requests
 
@@ -72,10 +73,22 @@ def main():
                     temporary.write_text(json.dumps(cache, ensure_ascii=False, indent=2) + '\n')
                     temporary.replace(CACHE)
                     print(f'Popularity: {count}/{len(pending)}', flush=True)
+    # Use explicit source metadata; never infer a singer's gender or octave from notes.
+    genders = {}
+    for response in json.loads((HERE.parent / 'vocal_range_cache.json').read_text()).values():
+        if isinstance(response['data'], list):
+            for item in response['data']:
+                song = item.get('song', {})
+                if song.get('id'):
+                    genders.setdefault(song['id'], set()).add(song.get('gender'))
     songs = []
     for row in rows:
         popularity = cache.get(row['source_url'], {})
+        labels = genders.get(unquote(row['source_url'].split('song=')[-1]), set())
+        gender = next(iter(labels)) if len(labels) == 1 else None
         songs.append(dict(title=row['title'], artist=row['artist'],
+                          sourceArtist=row['source_artist'], sourceTitle=row['source_title'],
+                          gender=gender if gender in ('M', 'F') else 'U',
                           range=row['vocal_ranges'], source=row['source_url'],
                           rank=popularity.get('rank'), deezer=popularity.get('url')))
     songs.sort(key=lambda s: (-(s['rank'] if s['rank'] is not None else -1),

@@ -3,106 +3,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kara Range</title>
+<link rel="stylesheet" href="vendor/nouislider.min.css">
 <style>
   body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #fffbea; color: #171717; }
   h1 { color: #000080; }
-  select, button { font: inherit; }
+  input, select, button { font: inherit; }
+  #query { width: min(100%, 400px); box-sizing: border-box; }
+  #finder label { display: inline-block; white-space: nowrap; }
+  .table-scroll { overflow-x: auto; }
   table { width: 100%; background: white; }
   th { text-align: left; background: #e4e4ef; }
-  td:last-child, th:last-child { text-align: right; }
+  .number { text-align: right; }
+  .notes { white-space: nowrap; }
+  .power { min-width: 32px; }
   a { color: #0000b0; }
   summary { cursor: pointer; }
+  .range-picker { margin: 20px 18px; }
+  .preset-lane { position: relative; height: 31px; }
+  .preset-range { position: absolute; height: 26px; padding: 2px; font-size: 14px; cursor: pointer; border: 1px solid #777; border-radius: 2px; white-space: nowrap; }
+  .preset-range[aria-pressed="true"] { outline: 2px solid #000080; outline-offset: 1px; font-weight: bold; }
+  #range-slider { margin: 14px 0 55px; }
+  #range-slider .noUi-connect { background: #000080; }
+  #range-slider .noUi-handle { cursor: grab; }
+  #range-slider .noUi-handle:focus-visible { outline: 3px solid #000080; }
+  #range-slider .noUi-value { font: 13px monospace; color: #333; }
+  #range-slider .noUi-value-horizontal { margin-top: 7px; }
+  #range-slider .noUi-marker { background: #777; }
+  @media (max-width: 450px) { .preset-range { font-size: 12px; } .range-picker { margin-inline: 10px; } }
 </style>
 <h1>♪ KARA RANGE</h1>
 <hr>
 <form id="finder">
-  <label for="low">Lowest</label> <select id="low" name="low" aria-label="Lowest note"></select>
-  <label for="high">Highest</label> <select id="high" name="high" aria-label="Highest note"></select>
-  <button type="submit">Find songs</button>
+  <p><label for="query">Search</label> <input type="search" id="query" name="query" placeholder="Artist, song, or both…" autocomplete="off"></p>
+  <p><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output></p>
+  <div class="range-picker" role="group" aria-labelledby="range-label">
+    <div id="presets-above"></div>
+    <div id="range-slider"></div>
+    <div id="presets-below"></div>
+  </div>
+  <input type="hidden" id="low" name="low" value="C3">
+  <input type="hidden" id="high" name="high" value="C5">
+  <p>
+    <label for="singer">Singer</label>
+    <select id="singer" name="singer"><option value="">Any</option><option value="M">Male</option><option value="F">Female</option><option value="U">Unknown</option></select>
+    <label><input type="checkbox" id="original" checked> Original</label>
+    <label><input type="checkbox" id="down1" checked> ↓1 octave</label>
+    <label><input type="checkbox" id="down2"> ↓2 octaves</label>
+    <label title="Octave-down versions must peak within 3 semitones of your highest note."><input type="checkbox" id="energetic" checked> Keep energetic (3 semitones)</label>
+  </p>
 </form>
-<p><small>Original keys · C4 = middle C</small></p>
+<p><small>Sounding pitch · C4 = middle C</small></p>
 <p id="status" role="status" aria-live="polite">Loading songs…</p>
+<div class="table-scroll">
 <table border="1" cellspacing="0" cellpadding="6" id="results" hidden>
-  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col">Range</th><th scope="col">Popularity ↓</th></tr></thead>
+  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col">Range</th><th scope="col">Octave</th><th scope="col" id="popularity-header" aria-sort="descending"><button type="button" id="sort-popularity">Popularity ↓</button></th><th scope="col" id="power-header" aria-sort="none"><button type="button" id="sort-power" title="Sort by highest note, then lowest note">Power ↕</button></th></tr></thead>
   <tbody id="songs"></tbody>
 </table>
+</div>
 <hr>
 <details>
   <summary>Data</summary>
   <p><small>Sorted by Deezer popularity score; unranked songs last. Scores are a popularity proxy, not play counts or sales. Updated <span id="updated">—</span>.</small></p>
   <p><small>761 published ranges from <a href="https://singingcarrots.com/">Singing Carrots</a>, drawn from the KaraFun top 1,000 catalogue. Missing, conflicting, and octave-ambiguous ranges excluded. Arrangements can differ. Song links show range sources; score links show the matched Deezer recording.</small></p>
+  <p><small><a href="https://blog.singingcarrots.com/what-is-vocal-range/">Preset ranges</a> are starting points. Singer labels come from source metadata; unclassified entries are Unknown. Published source octaves are preserved and can contain errors.</small></p>
+  <p><small>Octave-down matches must fit completely and, with Keep energetic enabled, peak at most 3 semitones below your upper limit. This peak-based estimate cannot establish chorus energy. Two octaves down is an uncommon, optional fit. Each song shows its highest allowed fitting octave.</small></p>
+  <p><small>Power runs from dark blue (lower) to red (higher) within your selected range. It compares the displayed highest note first, then the lowest note. Click Power to sort up/down; click Popularity to restore popularity order.</small></p>
 </details>
 <noscript><p>Enable JavaScript to find songs.</p></noscript>
 <script src="songs.js"></script>
-<script>
-  const names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
-  const low = document.getElementById('low');
-  const high = document.getElementById('high');
-  const status = document.getElementById('status');
-  const results = document.getElementById('results');
-  const body = document.getElementById('songs');
-
-  function pitch(note) {
-    const match = /^([A-G])([#b]?)(\d)$/.exec(note);
-    if (!match) return NaN;
-    const offset = {C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11};
-    return (+match[3] + 1) * 12 + offset[match[1]] + (match[2] === '#' ? 1 : match[2] === 'b' ? -1 : 0);
-  }
-
-  function fits(song, bottom, top) {
-    return song.range.split(';').every(voice => {
-      const [a, b] = voice.trim().split('-').map(pitch);
-      return a >= bottom && b <= top;
-    });
-  }
-
-  for (let midi = 12; midi <= 119; midi++) {
-    const note = names[midi % 12] + (Math.floor(midi / 12) - 1);
-    low.add(new Option(note, note));
-    high.add(new Option(note, note));
-  }
-  low.value = 'C3';
-  high.value = 'C5';
-
-  function link(text, url) {
-    const a = document.createElement('a');
-    a.textContent = text;
-    a.href = url;
-    return a;
-  }
-
-  function search(event) {
-    if (event) event.preventDefault();
-    body.replaceChildren();
-    results.hidden = true;
-    if (!window.catalogue) {
-      status.textContent = 'Song data unavailable. Reload to try again.';
-      return;
-    }
-    const bottom = pitch(low.value), top = pitch(high.value);
-    if (bottom > top) {
-      status.textContent = 'Lowest note must be below highest note.';
-      return;
-    }
-    const songs = window.catalogue.songs.filter(song => fits(song, bottom, top));
-    status.textContent = songs.length ? `${songs.length} songs` : 'No matches. Try a wider range.';
-    const fragment = document.createDocumentFragment();
-    for (const song of songs) {
-      const row = document.createElement('tr');
-      const values = [link(song.title, song.source), song.artist, song.range,
-        song.rank === null ? '—' : link(song.rank.toLocaleString(), song.deezer)];
-      for (const value of values) {
-        const cell = document.createElement('td');
-        cell.append(value);
-        row.append(cell);
-      }
-      fragment.append(row);
-    }
-    body.append(fragment);
-    results.hidden = songs.length === 0;
-  }
-  document.getElementById('finder').addEventListener('submit', search);
-  if (window.catalogue) document.getElementById('updated').textContent = window.catalogue.updated || 'unknown';
-  search();
-</script>
+<script src="vendor/nouislider.min.js"></script>
+<script src="app.js"></script>
 </html>
