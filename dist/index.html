@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="vendor/nouislider.min.css">
 <style>
   body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #fffbea; color: #171717; }
-  h1 { color: #000080; }
+  h1 { color: #000080; text-align: center; }
+  #appearance { text-align: center; }
+  #appearance label { display: inline-block; white-space: nowrap; margin: 3px; }
   input, select, button { font: inherit; }
   #query { width: min(100%, 400px); box-sizing: border-box; }
   #finder label { display: inline-block; white-space: nowrap; }
@@ -40,7 +42,29 @@
   #range-slider .noUi-marker { background: #777; }
   @media (max-width: 450px) { .preset-range { font-size: 12px; } .range-picker { margin-inline: 10px; } }
 </style>
-<h1>♪ KARA RANGE</h1>
+<h1 id="site-title">♪ KARA RANGE</h1>
+<details id="appearance">
+  <summary>Appearance</summary>
+  <p>
+    <label for="background">Background
+    <select id="background">
+      <option value="#fffbea">Cream</option>
+      <option value="#ffffff">Paper</option>
+      <option value="#edf7ed">Mint</option>
+      <option value="#edf4ff">Sky</option>
+      <option value="#f2edff">Lavender</option>
+      <option value="#fff0f2">Rose</option>
+    </select></label>
+    <label for="title-font">Title font
+    <select id="title-font">
+      <option value="inherit">Original</option>
+      <option value="Georgia, 'Times New Roman', serif">Georgia</option>
+      <option value="'Courier New', Courier, monospace">Courier</option>
+      <option value="'Trebuchet MS', Verdana, sans-serif">Trebuchet</option>
+      <option value="Impact, 'Arial Narrow', sans-serif">Impact</option>
+    </select></label>
+  </p>
+</details>
 <hr>
 <form id="finder">
   <p><label for="query">Search</label> <input type="search" id="query" name="query" placeholder="Artist, song, or both…" autocomplete="off"></p>
