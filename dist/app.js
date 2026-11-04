@@ -3,6 +3,8 @@ const names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const get = id => document.getElementById(id);
 const low = get('low'), high = get('high');
 let sortMode = 'popularity';
+let rangeSearchTimer;
+let rangeDragging = false;
 
 function pitch(note) {
   const match = /^([A-G])([#b]{0,2})(\d)$/.exec(note);
@@ -165,6 +167,7 @@ function createSongRow(song, bottom, top) {
 
 function search(event) {
   if (event) event.preventDefault();
+  clearTimeout(rangeSearchTimer);
   const body = get('songs'), results = get('results'), status = get('status');
   body.replaceChildren();
   results.hidden = true;
@@ -253,7 +256,17 @@ rangeSlider.noUiSlider.on('update', (values, handle, raw) => {
   for (const button of document.querySelectorAll('.preset-range')) {
     button.setAttribute('aria-pressed', String(button.dataset.range === `${low.value}-${high.value}`));
   }
-  search();
+  clearTimeout(rangeSearchTimer);
+  if (!rangeDragging) rangeSearchTimer = setTimeout(search, 120);
+});
+rangeSlider.noUiSlider.on('start.search', () => {
+  rangeDragging = true;
+  clearTimeout(rangeSearchTimer);
+});
+rangeSlider.noUiSlider.on('change.search', () => {
+  rangeDragging = false;
+  clearTimeout(rangeSearchTimer);
+  rangeSearchTimer = setTimeout(search, 0);
 });
 const lastPlayed = [pitch(low.value), pitch(high.value)];
 // Reset once per physical press; a touch's synthetic mouse event must not replay it.
@@ -296,5 +309,11 @@ function setSort(mode) {
 }
 get('sort-popularity').addEventListener('click', () => setSort(sortMode === 'popularity' ? 'popularity-asc' : 'popularity'));
 get('sort-range').addEventListener('click', () => setSort(sortMode === 'range-asc' ? 'range-desc' : 'range-asc'));
+get('reset-search').addEventListener('click', () => {
+  clearTimeout(searchTimer);
+  get('query').value = '';
+  search();
+  window.scrollTo(0, 0);
+});
 if (window.catalogue) get('updated').textContent = window.catalogue.updated || 'unknown';
 search();

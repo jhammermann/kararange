@@ -4,6 +4,17 @@ const piano = {
   buffers: new Map(),
   voices: new Set(),
   generation: 0,
+  request: 0,
+
+  resume() {
+    if (!this.context) {
+      const Context = window.AudioContext || window.webkitAudioContext;
+      this.context = new Context({latencyHint: 'interactive'});
+      this.output = this.context.createDynamicsCompressor();
+      this.output.connect(this.context.destination);
+    }
+    return this.context.state === 'running' ? Promise.resolve() : this.context.resume();
+  },
 
   buffer(midi) {
     if (!this.buffers.has(midi)) {
@@ -15,22 +26,18 @@ const piano = {
 
   async play(notes) {
     try {
-      if (!this.context) {
-        const Context = window.AudioContext || window.webkitAudioContext;
-        this.context = new Context({latencyHint: 'interactive'});
-        this.output = this.context.createDynamicsCompressor();
-        this.output.connect(this.context.destination);
-      }
-      const resume = this.context.resume();
+      const resume = this.resume();
+      const waitingForUnlock = this.context.state !== 'running';
+      const request = ++this.request;
       const generation = this.generation;
-      const requestedAt = this.context.currentTime;
       const keys = Object.keys(window.pianoSamples).map(Number);
       const prepared = await Promise.all(notes.map(async midi => {
         const key = keys.reduce((best, candidate) => Math.abs(candidate - midi) < Math.abs(best - midi) ? candidate : best);
         return {midi, key, buffer: await this.buffer(key)};
       }));
       await resume;
-      if (generation !== this.generation || this.context.currentTime - requestedAt > 0.25) return;
+      // Keep overlapping notes, but don't replay a backlog accumulated before touch unlock.
+      if (generation !== this.generation || (waitingForUnlock && request !== this.request)) return;
       const when = this.context.currentTime + 0.005;
       for (const {midi, key, buffer} of prepared) {
         while (this.voices.size >= 32) {
@@ -67,3 +74,9 @@ const piano = {
     this.voices.clear();
   }
 };
+
+// Mobile browsers may only allow resume at the end of a touch gesture.
+// This unlocks pending audio without requesting or replaying a note.
+document.addEventListener('touchend', () => {
+  if (piano.context && piano.context.state !== 'running') piano.resume().catch(() => {});
+}, {capture: true, passive: true});
