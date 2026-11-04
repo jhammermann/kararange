@@ -1,4 +1,4 @@
-# Kara Range
+# Kara Kat
 
 Find karaoke songs that fit your vocal range. A static HTML, CSS, and JavaScript
 site with bundled song data, a keyboard-accessible range slider, and piano samples.

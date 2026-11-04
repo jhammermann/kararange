@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kara Range – Find Karaoke Songs for Your Vocal Range</title>
+<title>Kara Kat – Find Karaoke Songs for Your Vocal Range</title>
 <meta name="description" content="Find karaoke songs that fit your vocal range. Choose your lowest and highest notes, search by song or artist, and explore matching songs and octave options.">
 <meta name="theme-color" content="#edf4ff">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Kara Range">
-<meta property="og:title" content="Kara Range – Find Karaoke Songs for Your Vocal Range">
+<meta property="og:site_name" content="Kara Kat">
+<meta property="og:title" content="Kara Kat – Find Karaoke Songs for Your Vocal Range">
 <meta property="og:description" content="Choose your lowest and highest notes to find karaoke songs that fit your voice. Search by song or artist and explore octave options.">
 <meta name="google-site-verification" content="9QARPgQMEnBu-dAYmrSv6LkknXugRL_jdHkbLVWgVpQ" />
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kara Range – Find Karaoke Songs for Your Vocal Range">
+<meta name="twitter:title" content="Kara Kat – Find Karaoke Songs for Your Vocal Range">
 <meta name="twitter:description" content="Choose your lowest and highest notes to find karaoke songs that fit your voice.">
 <!-- Public URL: start -->
 <link rel="canonical" href="https://jhammermann.github.io/kararange/">
@@ -24,7 +24,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Kara Range",
+  "name": "Kara Kat",
   "description": "Find karaoke songs that fit your vocal range. Search by song or artist and explore matching songs and octave options.",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Any",
@@ -34,7 +34,7 @@
 </script>
 <style>
   @font-face { font-family: 'Luckiest Guy'; src: url('vendor/luckiest-guy.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-  body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #edf4ff; color: #171717; }
+  body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #edf4ff; color: #171717; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
   h1 { color: #0277b3; text-align: center; font-family: 'Luckiest Guy', 'Trebuchet MS', sans-serif; font-size: clamp(38px, 9vw, 50px); font-weight: 400; }  #reset-search { width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
   .header-image { display: block; width: 160px; max-width: 100%; height: auto; margin: 0 auto 16px; }
   .intro { text-align: center; }
@@ -62,16 +62,16 @@
   #results #sort-range, #results #sort-popularity { display: block; box-sizing: border-box; width: 100%; padding: 4px 2px; border: 2px outset ButtonBorder; line-height: inherit; }
   #sort-range { position: absolute; inset: 0; height: 100%; }
   .sort-arrow { display: block; }
-  .notes { white-space: nowrap; }
-  .power, .popularity { width: 5rem; text-align: center; }
+  .notes { white-space: nowrap; font-weight: bold; }
+  .popularity { width: 5rem; text-align: center; }
   @media (max-width: 480px) {
-    .power, .popularity { width: 3.3rem; }
+    .popularity { width: 3.3rem; }
     .range-column { width: 7rem; }
     th, td { padding: 3px; }
     #sort-range, #sort-popularity { padding: 2px; }
     .notes { font-size: 14px; }
   }
-  .power-swatch, .popularity-swatch { display: block; width: 28px; height: 28px; box-sizing: border-box; margin: auto; border: 1px solid #777; }
+  .popularity-swatch { display: block; width: 28px; height: 28px; box-sizing: border-box; margin: auto; border: 1px solid #777; }
   .unknown-swatch { background: repeating-linear-gradient(45deg, #eee, #eee 4px, #ccc 4px, #ccc 5px); }
   #excluded-table { background: #f1f1f1; border: 2px dotted #888; margin-top: 16px; }
   #excluded-table th, #excluded-table td { border: 1px dotted #888; }
@@ -95,7 +95,7 @@
 </head>
 <body>
 <header>
-<h1 id="site-title"><button type="button" id="reset-search" title="Clear search and return to top">♪ KARA RANGE</button></h1>
+<h1 id="site-title"><button type="button" id="reset-search" title="Clear search and return to top">♪ KARA KAT</button></h1>
 <img class="header-image" src="cat.png" width="1244" height="1254" alt="Black-and-white cat illustration on a blue background.">
 <p class="intro">Find karaoke songs for your vocal range.<br>Choose your lowest and highest notes, then search by song or artist.<br>Power is highest when the song hits the top of your vocal range (great for karaoke).</p>
 </header>
@@ -126,16 +126,16 @@
 <p id="status" role="status" aria-live="polite">Loading songs…</p>
 <div class="table-scroll">
 <table border="1" cellspacing="0" cellpadding="6" id="results" hidden>
-  <colgroup><col><col class="popularity"><col class="power"><col class="range-column"></colgroup>
-  <thead><tr><th scope="col">Song</th><th scope="col" id="popularity-header" class="popularity" aria-sort="descending"><button type="button" id="sort-popularity" title="Red: less popular. Bright green: more popular. Click to reverse sort.">Popular <span class="sort-arrow" id="popularity-arrow">↓</span></button></th><th scope="col" class="power" title="Red: lower range. Bright green: more powerful.">Power</th><th scope="col" id="range-header" aria-sort="none"><button type="button" id="sort-range" title="Sort by highest note, then lowest note">Range <span class="sort-arrow" id="range-arrow">↕</span></button></th></tr></thead>
+  <colgroup><col><col class="popularity"><col class="range-column"></colgroup>
+  <thead><tr><th scope="col">Song</th><th scope="col" id="popularity-header" class="popularity" aria-sort="descending"><button type="button" id="sort-popularity" title="Red: less popular. Bright green: more popular. Click to reverse sort.">Popular <span class="sort-arrow" id="popularity-arrow">↓</span></button></th><th scope="col" id="range-header" aria-sort="none"><button type="button" id="sort-range" title="Red: lower range. Green: more powerful. Sort by highest note, then lowest note">Range <span class="sort-arrow" id="range-arrow">↕</span></button></th></tr></thead>
   <tbody id="songs"></tbody>
 </table>
 </div>
 <div class="table-scroll" id="excluded-results" hidden>
 <table border="1" cellspacing="0" cellpadding="6" id="excluded-table">
   <caption id="excluded-caption">Filtered out</caption>
-  <colgroup><col><col class="popularity"><col class="power"><col class="range-column"></colgroup>
-  <thead><tr><th scope="col">Song</th><th scope="col" class="popularity">Popular</th><th scope="col" class="power">Power</th><th scope="col">Range</th></tr></thead>
+  <colgroup><col><col class="popularity"><col class="range-column"></colgroup>
+  <thead><tr><th scope="col">Song</th><th scope="col" class="popularity">Popular</th><th scope="col">Range</th></tr></thead>
   <tbody id="excluded-songs"></tbody>
 </table>
 </div>
