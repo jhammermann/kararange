@@ -80,12 +80,14 @@
 <main>
 <form id="finder">
   <p class="control-row"><label for="query">Search</label> <input type="search" id="query" name="query" placeholder="Artist, song, or both…" autocomplete="off"></p>
-  <p class="control-row"><span><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output></span> <label><input type="checkbox" id="sound" checked> Piano</label></p>
-  <div class="range-picker" role="group" aria-labelledby="range-label">
-    <div id="presets-above"></div>
-    <div id="range-slider"></div>
-    <div id="presets-below"></div>
-  </div>
+  <details id="range-selection" open>
+    <summary><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output></summary>
+    <div class="range-picker" role="group" aria-labelledby="range-label">
+      <div id="presets-above"></div>
+      <div id="range-slider"></div>
+      <div id="presets-below"></div>
+    </div>
+  </details>
   <input type="hidden" id="low" name="low" value="C3">
   <input type="hidden" id="high" name="high" value="C5">
   <p class="control-row">
@@ -97,7 +99,6 @@
     <label title="Octave-shifted versions must peak within 3 semitones of your highest note."><input type="checkbox" id="energetic" checked> Keep energetic </label>
   </p>
 </form>
-<p><small>Sounding pitch · C4 = middle C</small></p>
 <p id="status" role="status" aria-live="polite">Loading songs…</p>
 <div class="table-scroll">
 <table border="1" cellspacing="0" cellpadding="6" id="results" hidden>

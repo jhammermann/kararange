@@ -14,8 +14,6 @@ const piano = {
   },
 
   async play(notes) {
-    const toggle = document.getElementById('sound');
-    if (!toggle.checked) return;
     try {
       if (!this.context) {
         const Context = window.AudioContext || window.webkitAudioContext;
@@ -32,7 +30,7 @@ const piano = {
         return {midi, key, buffer: await this.buffer(key)};
       }));
       await resume;
-      if (!toggle.checked || generation !== this.generation || this.context.currentTime - requestedAt > 0.25) return;
+      if (generation !== this.generation || this.context.currentTime - requestedAt > 0.25) return;
       const when = this.context.currentTime + 0.005;
       for (const {midi, key, buffer} of prepared) {
         while (this.voices.size >= 32) {
@@ -60,8 +58,6 @@ const piano = {
       }
     } catch (error) {
       this.mute();
-      toggle.checked = false;
-      toggle.title = 'Piano playback is unavailable in this browser.';
     }
   },
 
@@ -71,6 +67,3 @@ const piano = {
     this.voices.clear();
   }
 };
-document.getElementById('sound').addEventListener('change', event => {
-  if (!event.target.checked) piano.mute();
-});

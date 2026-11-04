@@ -69,7 +69,10 @@ not a play count. “Keep energetic” requires shifted versions to peak within
 three semitones of the selected upper note; it does not measure chorus energy.
 
 The Sky background and Trebuchet title font are fixed. No appearance preferences
-are read or stored. Search and filtering run in the browser.
+are read or stored. Search and filtering run in the browser. Expand “Your range”
+to view the slider and presets; collapsing it keeps the selected range active.
+Slider presses play once, with another note on each new position; releasing is
+silent. Presets play their low and high notes together.
 
 ## Third-party credits
 

@@ -196,15 +196,6 @@ function search(event) {
   const excluded = query ? candidates.filter(candidate => !candidate.singerMatches || !candidate.fit)
     .sort((a, b) => popularity(a.song, b.song))[0] : null;
   if (excluded) {
-    const reasons = [];
-    if (!excluded.singerMatches) reasons.push('singer');
-    if (!excluded.fit) {
-      const span = Math.min(...excluded.song.options.map(o => o.top - o.bottom));
-      reasons.push(!octaves.length ? 'octave options' : excluded.song.top === null ? 'range unknown'
-        : fitSong(excluded.song, bottom, top, octaves, false) ? 'energy'
-        : span > top - bottom ? `song spans ${span} semitones; selection ${top - bottom}` : 'range / octave');
-    }
-    get('excluded-caption').textContent = `Filtered out · ${reasons.join(', ')}${excluded.fit || excluded.song.top === null ? '' : ' · published range'}`;
     get('excluded-songs').append(createSongRow(excluded.fit || {...excluded.song, octave: excluded.song.top === null ? null : 0}, bottom, top));
     get('excluded-results').hidden = false;
   }
@@ -247,7 +238,11 @@ for (const [name, a, b, color, side] of presets) {
   button.style.left = `${(pitch(a) - sliderMin) / (sliderMax - sliderMin) * 100}%`;
   button.style.width = `${(pitch(b) - pitch(a)) / (sliderMax - sliderMin) * 100}%`;
   button.style.backgroundColor = color;
-  button.addEventListener('click', () => rangeSlider.noUiSlider.set([pitch(a), pitch(b)]));
+  button.addEventListener('click', () => {
+    const notes = [pitch(a), pitch(b)];
+    rangeSlider.noUiSlider.set(notes);
+    piano.play(notes);
+  });
   lane.append(button);
   get(`presets-${side}`).append(lane);
 }
@@ -261,17 +256,19 @@ rangeSlider.noUiSlider.on('update', (values, handle, raw) => {
   search();
 });
 const lastPlayed = [pitch(low.value), pitch(high.value)];
-rangeSlider.noUiSlider.on('start.piano', (values, handle, raw) => {
-  lastPlayed[handle] = Math.round(raw[handle]);
-  piano.play([lastPlayed[handle]]);
+// Reset once per physical press; a touch's synthetic mouse event must not replay it.
+rangeSlider.addEventListener('pointerdown', () => {
+  lastPlayed.fill(null);
 });
-rangeSlider.noUiSlider.on('slide.piano', (values, handle, raw) => {
+function playSliderNote(values, handle, raw) {
   const midi = Math.round(raw[handle]);
   if (midi !== lastPlayed[handle]) {
     lastPlayed[handle] = midi;
     piano.play([midi]);
   }
-});
+}
+rangeSlider.noUiSlider.on('start.piano', playSliderNote);
+rangeSlider.noUiSlider.on('slide.piano', playSliderNote);
 rangeSlider.noUiSlider.on('set.piano', (values, handle, raw) => {
   lastPlayed[handle] = Math.round(raw[handle]);
 });
