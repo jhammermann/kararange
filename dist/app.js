@@ -275,8 +275,12 @@ rangeSlider.noUiSlider.on('set.piano', (values, handle, raw) => {
 get('finder').addEventListener('submit', search);
 get('finder').addEventListener('change', search);
 let searchTimer;
+let rangeCollapsedForSearch = false;
 get('query').addEventListener('input', () => {
-  if (get('query').value.trim()) get('range-selection').open = false;
+  if (!rangeCollapsedForSearch && get('query').value.trim()) {
+    get('range-selection').open = false;
+    rangeCollapsedForSearch = true;
+  }
   clearTimeout(searchTimer);
   searchTimer = setTimeout(search, 100);
 });
