@@ -111,11 +111,14 @@ function colorScale(t, stops) {
   return `rgb(${start.map((value, i) => Math.round(value + (end[i] - value) * (t - a) / (b - a))).join(', ')})`;
 }
 
-function powerColor(song, bottom, top) {
+function powerScore(song) {
   // Encoding preserves highest-note priority even when lowest notes differ.
-  const span = top - bottom;
-  const t = span ? Math.max(0, Math.min(1,
-    ((song.top - bottom) * 128 + song.bottom - bottom) / (span * 129))) : 1;
+  return song.top * 128 + song.bottom;
+}
+
+function powerColor(song, minPower, maxPower) {
+  const span = maxPower - minPower;
+  const t = span ? (powerScore(song) - minPower) / span : 1;
   return colorScale(t, [[0, [230, 40, 40]], [0.5, [245, 210, 40]], [1, [0, 255, 0]]]);
 }
 
@@ -132,7 +135,7 @@ function link(text, url) {
 
 const catalogue = window.catalogue ? window.catalogue.songs.map(indexSong).filter(song => song.options.length) : null;
 
-function createSongRow(song, bottom, top) {
+function createSongRow(song, minPower, maxPower) {
   const row = document.createElement('tr');
   const range = `${note(song.bottom)}–${note(song.top)}${song.uncertain ? ' ?' : ''}`;
   const videoSearch = 'https://www.youtube.com/@karafun/search?query=' + encodeURIComponent(`${song.artist} ${song.title}`);
@@ -140,23 +143,27 @@ function createSongRow(song, bottom, top) {
   songLink.target = '_blank';
   songLink.rel = 'noopener';
   songLink.title = 'Find this song on KaraFun’s YouTube channel';
-  const values = [songLink, song.artist, range,
-    song.octave === null ? '—' : song.octave === 0 ? 'Original' : `${song.octave > 0 ? '↑' : '↓'}${Math.abs(song.octave)}`];
-  for (const [i, value] of values.entries()) {
-    const cell = document.createElement('td');
-    cell.append(value);
-    if (i === 1) cell.title = [{M: 'Male', F: 'Female', B: 'Both'}[song.gender], song.leadSinger && `Lead: ${song.leadSinger}`].filter(Boolean).join(' · ');
-    if (i === 2) {
-      cell.title = song.top === null ? 'Range unknown; this is not a confirmed vocal-range fit.'
-        : `${song.usingGuess ? 'Estimated range' : 'Source range'}: ${song.usingGuess ? song.guessedRange : song.range}${song.note ? ' · ' + song.note : ''}${song.uncertain ? ' · ? means uncertain' : ''}`;
-      cell.className = 'notes';
-    }
-    row.append(cell);
-  }
+  const songCell = document.createElement('td');
+  const artist = document.createElement('em');
+  artist.className = 'artist';
+  artist.textContent = song.artist;
+  artist.title = [{M: 'Male', F: 'Female', B: 'Both'}[song.gender], song.leadSinger && `Lead: ${song.leadSinger}`].filter(Boolean).join(' · ');
+  songCell.append(songLink, artist);
+  row.append(songCell);
+  const rangeCell = document.createElement('td');
+  rangeCell.className = 'notes';
+  rangeCell.title = song.top === null ? 'Range unknown; this is not a confirmed vocal-range fit.'
+    : `${song.usingGuess ? 'Estimated range' : 'Source range'}: ${song.usingGuess ? song.guessedRange : song.range}${song.note ? ' · ' + song.note : ''}${song.uncertain ? ' · ? means uncertain' : ''}`;
+  const octave = document.createElement('strong');
+  octave.className = 'octave-marker';
+  octave.textContent = song.octave === null ? '—' : song.octave === 0 ? '●' : `${song.octave > 0 ? '↑' : '↓'}${Math.abs(song.octave)}`;
+  octave.title = song.octave === null ? 'Octave unknown' : song.octave === 0 ? 'Original octave' : `${Math.abs(song.octave)} octave(s) ${song.octave > 0 ? 'up' : 'down'}`;
+  octave.setAttribute('aria-label', octave.title);
+  rangeCell.append(octave, range);
   for (const [name, known, color, label] of [
     ['popularity', song.rank !== null, song.rank === null ? null : popularityColor(song.rank),
       song.rank === null ? 'Popularity unavailable' : `Deezer popularity: ${song.rank.toLocaleString()}`],
-    ['power', song.top !== null, song.top === null ? null : powerColor(song, bottom, top),
+    ['power', song.top !== null, song.top === null ? null : powerColor(song, minPower, maxPower),
       song.top === null ? 'Power unknown: no verified vocal range' : `Power: highest ${note(song.top)}, lowest ${note(song.bottom)}`]
   ]) {
     const cell = document.createElement('td');
@@ -170,6 +177,7 @@ function createSongRow(song, bottom, top) {
     cell.append(swatch);
     row.append(cell);
   }
+  row.append(rangeCell);
   return row;
 }
 
@@ -193,21 +201,26 @@ function search(event) {
   const octaves = [get('original').checked ? 0 : null,
     ...(get('octave1').checked ? [-1, 1] : []), ...(get('octave2').checked ? [-2, 2] : [])].filter(o => o !== null);
   const query = normalize(get('query').value);
-  const candidates = catalogue.filter(song => matchesQuery(song, query)).map(song => selectRange(song, get('guess-ranges').checked)).map(song => ({song,
+  const fitted = catalogue.map(song => selectRange(song, get('guess-ranges').checked)).map(song => ({song,
     singerMatches: !get('singer').value || song.gender === get('singer').value,
     fit: fitSong(song, bottom, top, octaves, get('energetic').checked)}));
+  // Calibrate after octave selection, across all fits regardless of search or singer.
+  const powers = fitted.filter(candidate => candidate.fit).map(candidate => powerScore(candidate.fit));
+  const minPower = powers.length ? Math.min(...powers) : 0;
+  const maxPower = powers.length ? Math.max(...powers) : 0;
+  const candidates = fitted.filter(candidate => matchesQuery(candidate.song, query));
   const songs = candidates.filter(candidate => candidate.singerMatches && candidate.fit).map(candidate => candidate.fit).sort(compareSongs);
   status.textContent = !octaves.length ? 'Choose at least one octave option.'
     : songs.length ? `${songs.length} songs`
     : 'No matches. Try a wider range, another octave, or fewer search words.';
   const fragment = document.createDocumentFragment();
-  for (const song of songs) fragment.append(createSongRow(song, bottom, top));
+  for (const song of songs) fragment.append(createSongRow(song, minPower, maxPower));
   body.append(fragment);
   results.hidden = songs.length === 0;
   const excluded = query ? candidates.filter(candidate => !candidate.singerMatches || !candidate.fit)
     .sort((a, b) => popularity(a.song, b.song))[0] : null;
   if (excluded) {
-    get('excluded-songs').append(createSongRow(excluded.fit || {...excluded.song, octave: excluded.song.top === null ? null : 0}, bottom, top));
+    get('excluded-songs').append(createSongRow(excluded.fit || {...excluded.song, octave: excluded.song.top === null ? null : 0}, minPower, maxPower));
     get('excluded-results').hidden = false;
   }
 }
@@ -311,8 +324,8 @@ function setSort(mode) {
   const byPopularity = mode === 'popularity' || mode === 'popularity-asc';
   get('popularity-header').setAttribute('aria-sort', mode === 'popularity' ? 'descending' : mode === 'popularity-asc' ? 'ascending' : 'none');
   get('range-header').setAttribute('aria-sort', byPopularity ? 'none' : mode === 'range-asc' ? 'ascending' : 'descending');
-  get('sort-popularity').textContent = mode === 'popularity' ? 'Popular ↓' : mode === 'popularity-asc' ? 'Popular ↑' : 'Popular';
-  get('sort-range').textContent = mode === 'range-asc' ? 'Range ↑' : mode === 'range-desc' ? 'Range ↓' : 'Range ↕';
+  get('popularity-arrow').textContent = mode === 'popularity' ? '↓' : mode === 'popularity-asc' ? '↑' : '↕';
+  get('range-arrow').textContent = mode === 'range-asc' ? '↑' : mode === 'range-desc' ? '↓' : '↕';
   search();
 }
 get('sort-popularity').addEventListener('click', () => setSort(sortMode === 'popularity' ? 'popularity-asc' : 'popularity'));

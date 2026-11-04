@@ -46,11 +46,30 @@
   #query { width: min(100%, 400px); box-sizing: border-box; }
   .octave-arrow { display: inline-flex; align-items: center; line-height: 1; font-family: Arial, sans-serif; }
   .table-scroll { overflow-x: auto; }
-  table { width: 100%; background: white; }
+  table { width: 100%; background: white; table-layout: fixed; }
+  th, td { padding: 4px; }
+  td:first-child { overflow-wrap: anywhere; }
+  td:first-child > a { font-size: calc(1em + 2pt); }
+  .artist { display: block; font-style: italic; }
+  .range-column { width: 8rem; }
+  .octave-marker { display: inline-block; width: 2em; text-align: center; font-weight: bold; }
   th { text-align: left; background: #e4e4ef; }
   #sort-range, #sort-popularity { white-space: nowrap; }
+  #results th { vertical-align: top; padding: 6px 4px; line-height: 1.2; }
+  #results #range-header, #results #popularity-header { padding: 0; }
+  #range-header { position: relative; }
+  #results #sort-range, #results #sort-popularity { display: block; box-sizing: border-box; width: 100%; padding: 4px 2px; border: 2px outset ButtonBorder; line-height: inherit; }
+  #sort-range { position: absolute; inset: 0; height: 100%; }
+  .sort-arrow { display: block; }
   .notes { white-space: nowrap; }
-  .power, .popularity { width: 1%; }
+  .power, .popularity { width: 5rem; text-align: center; }
+  @media (max-width: 480px) {
+    .power, .popularity { width: 3.3rem; }
+    .range-column { width: 7rem; }
+    th, td { padding: 3px; }
+    #sort-range, #sort-popularity { padding: 2px; }
+    .notes { font-size: 14px; }
+  }
   .power-swatch, .popularity-swatch { display: block; width: 28px; height: 28px; box-sizing: border-box; margin: auto; border: 1px solid #777; }
   .unknown-swatch { background: repeating-linear-gradient(45deg, #eee, #eee 4px, #ccc 4px, #ccc 5px); }
   #excluded-table { background: #f1f1f1; border: 2px dotted #888; margin-top: 16px; }
@@ -106,14 +125,16 @@
 <p id="status" role="status" aria-live="polite">Loading songs…</p>
 <div class="table-scroll">
 <table border="1" cellspacing="0" cellpadding="6" id="results" hidden>
-  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col" id="range-header" aria-sort="none"><button type="button" id="sort-range" title="Sort by highest note, then lowest note">Range ↕</button></th><th scope="col">Octave</th><th scope="col" id="popularity-header" class="popularity" aria-sort="descending"><button type="button" id="sort-popularity" title="Red: less popular. Bright green: more popular. Click to reverse sort.">Popular ↓</button></th><th scope="col" class="power" title="Red: lower range. Bright green: more powerful.">Power</th></tr></thead>
+  <colgroup><col><col class="popularity"><col class="power"><col class="range-column"></colgroup>
+  <thead><tr><th scope="col">Song</th><th scope="col" id="popularity-header" class="popularity" aria-sort="descending"><button type="button" id="sort-popularity" title="Red: less popular. Bright green: more popular. Click to reverse sort.">Popular <span class="sort-arrow" id="popularity-arrow">↓</span></button></th><th scope="col" class="power" title="Red: lower range. Bright green: more powerful.">Power</th><th scope="col" id="range-header" aria-sort="none"><button type="button" id="sort-range" title="Sort by highest note, then lowest note">Range <span class="sort-arrow" id="range-arrow">↕</span></button></th></tr></thead>
   <tbody id="songs"></tbody>
 </table>
 </div>
 <div class="table-scroll" id="excluded-results" hidden>
 <table border="1" cellspacing="0" cellpadding="6" id="excluded-table">
   <caption id="excluded-caption">Filtered out</caption>
-  <thead><tr><th scope="col">Song</th><th scope="col">Artist</th><th scope="col">Range</th><th scope="col">Octave</th><th scope="col" class="popularity">Popular</th><th scope="col" class="power">Power</th></tr></thead>
+  <colgroup><col><col class="popularity"><col class="power"><col class="range-column"></colgroup>
+  <thead><tr><th scope="col">Song</th><th scope="col" class="popularity">Popular</th><th scope="col" class="power">Power</th><th scope="col">Range</th></tr></thead>
   <tbody id="excluded-songs"></tbody>
 </table>
 </div>
