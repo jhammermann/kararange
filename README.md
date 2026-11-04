@@ -68,7 +68,7 @@ separately, and MyVocalRange male parts are converted to sounding pitch.
 not a play count. “Keep energetic” requires shifted versions to peak within
 three semitones of the selected upper note; it does not measure chorus energy.
 
-The Sky background and Trebuchet title font are fixed. No appearance preferences
+The Sky background and Luckiest Guy title font are fixed. No appearance preferences
 are read or stored. Search and filtering run in the browser. Expand “Your range”
 to view the slider and presets; collapsing it keeps the selected range active.
 Slider presses play once, with another note on each new position; releasing is
@@ -76,6 +76,8 @@ silent. Presets play their low and high notes together.
 
 ## Third-party credits
 
+- Cat image by Levopop.
+- Luckiest Guy by Astigmatic: [Apache 2.0 license](dist/vendor/luckiest-guy.LICENSE.txt).
 - noUiSlider 15.8.1: [MIT license](dist/vendor/nouislider.LICENSE.md).
 - Salamander Grand Piano by Alexander Holm:
   [CC BY 3.0 attribution and sample details](dist/vendor/piano.LICENSE.md).
