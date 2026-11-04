@@ -296,20 +296,3 @@ get('sort-popularity').addEventListener('click', () => setSort(sortMode === 'pop
 get('sort-range').addEventListener('click', () => setSort(sortMode === 'range-asc' ? 'range-desc' : 'range-asc'));
 if (window.catalogue) get('updated').textContent = window.catalogue.updated || 'unknown';
 search();
-
-const appearanceControls = [get('background'), get('title-font')];
-try {
-  const saved = JSON.parse(localStorage.getItem('kara-range-appearance') || '{}');
-  for (const control of appearanceControls) {
-    if ([...control.options].some(option => option.value === saved[control.id])) control.value = saved[control.id];
-  }
-} catch (error) { /* Appearance still works when browser storage is unavailable. */ }
-function applyAppearance() {
-  document.body.style.backgroundColor = get('background').value;
-  get('site-title').style.fontFamily = get('title-font').value;
-  try {
-    localStorage.setItem('kara-range-appearance', JSON.stringify(Object.fromEntries(appearanceControls.map(control => [control.id, control.value]))));
-  } catch (error) { /* Storage is optional. */ }
-}
-for (const control of appearanceControls) control.addEventListener('change', applyAppearance);
-applyAppearance();

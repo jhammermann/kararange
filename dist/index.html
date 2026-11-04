@@ -1,16 +1,41 @@
 <!doctype html>
 <html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kara Range</title>
+<title>Kara Range – Find Karaoke Songs for Your Vocal Range</title>
+<meta name="description" content="Find karaoke songs that fit your vocal range. Choose your lowest and highest notes, search by song or artist, and explore matching songs and octave options.">
+<meta name="theme-color" content="#edf4ff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kara Range">
+<meta property="og:title" content="Kara Range – Find Karaoke Songs for Your Vocal Range">
+<meta property="og:description" content="Choose your lowest and highest notes to find karaoke songs that fit your voice. Search by song or artist and explore octave options.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kara Range – Find Karaoke Songs for Your Vocal Range">
+<meta name="twitter:description" content="Choose your lowest and highest notes to find karaoke songs that fit your voice.">
+<!-- Public URL: start -->
+<!-- Run configure_site.py once the public URL is known. -->
+<!-- Public URL: end -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="vendor/nouislider.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Kara Range",
+  "description": "Find karaoke songs that fit your vocal range. Search by song or artist and explore matching songs and octave options.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "en"
+}
+</script>
 <style>
-  body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #fffbea; color: #171717; }
-  h1 { color: #000080; text-align: center; }
-  #appearance { text-align: center; }
+  body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #edf4ff; color: #171717; }
+  h1 { color: #000080; text-align: center; font-family: 'Trebuchet MS', Verdana, sans-serif; }
+  .intro { text-align: center; }
   .control-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-  #appearance .control-row { justify-content: center; }
-  #appearance label, #finder label { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; line-height: 1.25; }
+  #finder label { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; line-height: 1.25; }
   .control-row > label { min-height: 28px; }
   input[type="checkbox"] { margin: 0; flex: none; }
   input, select, button { font: inherit; }
@@ -43,30 +68,14 @@
   #range-slider .noUi-marker { background: #777; }
   @media (max-width: 450px) { .preset-range { font-size: 12px; } .range-picker { margin-inline: 10px; } }
 </style>
+</head>
+<body>
+<header>
 <h1 id="site-title">♪ KARA RANGE</h1>
-<details id="appearance">
-  <summary>Appearance</summary>
-  <p class="control-row">
-    <label for="background">Background
-    <select id="background">
-      <option value="#fffbea">Cream</option>
-      <option value="#ffffff">Paper</option>
-      <option value="#edf7ed">Mint</option>
-      <option value="#edf4ff">Sky</option>
-      <option value="#f2edff">Lavender</option>
-      <option value="#fff0f2">Rose</option>
-    </select></label>
-    <label for="title-font">Title font
-    <select id="title-font">
-      <option value="inherit">Original</option>
-      <option value="Georgia, 'Times New Roman', serif">Georgia</option>
-      <option value="'Courier New', Courier, monospace">Courier</option>
-      <option value="'Trebuchet MS', Verdana, sans-serif">Trebuchet</option>
-      <option value="Impact, 'Arial Narrow', sans-serif">Impact</option>
-    </select></label>
-  </p>
-</details>
+<p class="intro">Find karaoke songs for your vocal range.<br>Choose your lowest and highest notes, then search by song or artist.</p>
+</header>
 <hr>
+<main>
 <form id="finder">
   <p class="control-row"><label for="query">Search</label> <input type="search" id="query" name="query" placeholder="Artist, song, or both…" autocomplete="off"></p>
   <p class="control-row"><span><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output></span> <label><input type="checkbox" id="sound" checked> Piano</label></p>
@@ -101,22 +110,20 @@
   <tbody id="excluded-songs"></tbody>
 </table>
 </div>
+<noscript><p>Enable JavaScript to search songs and adjust your vocal range.</p></noscript>
+</main>
 <hr>
+<footer>
 <details>
   <summary>Data</summary>
-  <p><small>Sorted by Deezer popularity score; unranked songs last. Scores are a popularity proxy, not play counts or sales. Updated <span id="updated">—</span>.</small></p>
-  <p><small>Published ranges come from <a href="https://singingcarrots.com/">Singing Carrots</a> and <a href="https://www.myvocalrange.com/">MyVocalRange</a>. Songs with missing ranges are omitted. Multiple published arrangements are tested separately. Song links search KaraFun’s YouTube channel.</small></p>
-  <p><small>The suggested octave is calculated afresh for your selected notes; whole-octave shifts preserve the width of the melody. Some published arrangements exceed the two-octave presets and need a wider custom range.</small></p>
-  <p><small><a href="https://blog.singingcarrots.com/what-is-vocal-range/">Preset ranges</a> are starting points. Singer labels come from source metadata; unclassified entries are Unknown. MyVocalRange male parts are converted down one octave. Where both sources confirm an octave discrepancy in the same key, the range is corrected and documented; other source errors can remain.</small></p>
-  <p><small>Octave-shifted matches must fit completely and, with Keep energetic enabled, peak at most 3 semitones below your upper limit. This peak-based estimate cannot establish chorus energy. Two-octave shifts are uncommon and optional. Each song prefers original pitch, then the smallest fitting octave shift, up or down.</small></p>
-  <p><small>Power and Popular: red → yellow → bright green at maximum. Popularity uses Deezer’s unitless indicator, not play counts. Grey hatched squares mean unavailable. Range and Popular headers toggle ascending/descending; unavailable values stay last.</small></p>
-  <p><small>During search, the most popular matching song excluded by your filters appears separately below the results. The caption identifies the excluding filters; if no allowed octave fits, its published range is shown.</small></p>
-  <p><small>Piano: <a href="https://github.com/Tonejs/audio/tree/master/salamander">Salamander Grand Piano</a> by Alexander Holm, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Slider handles play notes; presets stay silent.</small></p>
+  <p><small>Ranges: <a href="https://singingcarrots.com/">Singing Carrots</a> / <a href="https://www.myvocalrange.com/">MyVocalRange</a>; arrangements may vary. Popularity: Deezer · <span id="updated">—</span>.</small></p>
+  <p><small>Piano: <a href="https://github.com/Tonejs/audio/tree/master/salamander">Salamander</a> by Alexander Holm · <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small></p>
 </details>
-<noscript><p>Enable JavaScript to find songs.</p></noscript>
+</footer>
 <script src="songs.js"></script>
 <script src="vendor/nouislider.min.js"></script>
 <script src="vendor/piano-samples.js"></script>
 <script src="piano.js"></script>
 <script src="app.js"></script>
+</body>
 </html>
