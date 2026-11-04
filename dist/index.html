@@ -8,12 +8,13 @@
   body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #fffbea; color: #171717; }
   h1 { color: #000080; text-align: center; }
   #appearance { text-align: center; }
-  #appearance label { display: inline-block; white-space: nowrap; margin: 3px; }
+  .control-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  #appearance .control-row { justify-content: center; }
+  #appearance label, #finder label { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; line-height: 1.25; }
+  .control-row > label { min-height: 28px; }
+  input[type="checkbox"] { margin: 0; flex: none; }
   input, select, button { font: inherit; }
   #query { width: min(100%, 400px); box-sizing: border-box; }
-  #finder label { display: inline-block; white-space: nowrap; }
-  #finder .octave-option { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; }
-  .octave-option input { margin: 0; }
   .octave-arrow { display: inline-flex; align-items: center; line-height: 1; font-family: Arial, sans-serif; }
   .table-scroll { overflow-x: auto; }
   table { width: 100%; background: white; }
@@ -45,7 +46,7 @@
 <h1 id="site-title">♪ KARA RANGE</h1>
 <details id="appearance">
   <summary>Appearance</summary>
-  <p>
+  <p class="control-row">
     <label for="background">Background
     <select id="background">
       <option value="#fffbea">Cream</option>
@@ -67,8 +68,8 @@
 </details>
 <hr>
 <form id="finder">
-  <p><label for="query">Search</label> <input type="search" id="query" name="query" placeholder="Artist, song, or both…" autocomplete="off"></p>
-  <p><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output> <label><input type="checkbox" id="sound" checked> Piano</label></p>
+  <p class="control-row"><label for="query">Search</label> <input type="search" id="query" name="query" placeholder="Artist, song, or both…" autocomplete="off"></p>
+  <p class="control-row"><span><span id="range-label">Your range</span>: <output id="range-value">C3–C5</output></span> <label><input type="checkbox" id="sound" checked> Piano</label></p>
   <div class="range-picker" role="group" aria-labelledby="range-label">
     <div id="presets-above"></div>
     <div id="range-slider"></div>
@@ -76,9 +77,9 @@
   </div>
   <input type="hidden" id="low" name="low" value="C3">
   <input type="hidden" id="high" name="high" value="C5">
-  <p>
-    <label for="singer">Singer</label>
-    <select id="singer" name="singer"><option value="">Any</option><option value="M">Male</option><option value="F">Female</option><option value="U">Unknown</option></select>
+  <p class="control-row">
+    <label for="singer">Singer
+    <select id="singer" name="singer"><option value="">Any</option><option value="M">Male</option><option value="F">Female</option><option value="U">Unknown</option></select></label>
     <label><input type="checkbox" id="original" checked> Original</label>
     <label class="octave-option" title="Allow one octave higher or lower"><input type="checkbox" id="octave1" aria-label="Allow one octave higher or lower" checked><span class="octave-arrow" aria-hidden="true">↕</span><span>1 octave</span></label>
     <label class="octave-option" title="Allow two octaves higher or lower"><input type="checkbox" id="octave2" aria-label="Allow two octaves higher or lower"><span class="octave-arrow" aria-hidden="true">↕</span><span>2 octaves</span></label>
