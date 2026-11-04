@@ -43,10 +43,18 @@ function indexSong(song) {
   const fields = [song.artist, song.title, song.sourceArtist || '', song.sourceTitle || ''].map(normalize);
   const options = (song.rangeOptions || (song.range ? [{range: song.range, source: song.source}] : [])).map(option => {
     const voices = option.range.split(';').map(voice => voice.trim().split('-').map(pitch));
-    return {...option, bottom: Math.min(...voices.map(r => r[0])), top: Math.max(...voices.map(r => r[1]))};
+    const guessed = option.guessedRange ? option.guessedRange.split('-').map(pitch) : null;
+    return {...option, bottom: Math.min(...voices.map(r => r[0])), top: Math.max(...voices.map(r => r[1])), guessed};
   }).filter(option => Number.isFinite(option.bottom) && Number.isFinite(option.top));
   return {...song, fields, words: [...new Set(fields.flatMap(f => [...f.split(' '), f.replace(/ /g, '')]).filter(Boolean))],
     options, ...(options[0] || {bottom: null, top: null})};
+}
+
+function selectRange(song, useGuess) {
+  const options = song.options.map(option => useGuess && option.guessed
+    ? {...option, bottom: option.guessed[0], top: option.guessed[1], usingGuess: true}
+    : {...option, usingGuess: false});
+  return {...song, options, ...(options[0] || {bottom: null, top: null})};
 }
 
 function matchesQuery(song, query) {
@@ -126,7 +134,7 @@ const catalogue = window.catalogue ? window.catalogue.songs.map(indexSong).filte
 
 function createSongRow(song, bottom, top) {
   const row = document.createElement('tr');
-  const range = `${note(song.bottom)}–${note(song.top)}`;
+  const range = `${note(song.bottom)}–${note(song.top)}${song.uncertain ? ' ?' : ''}`;
   const videoSearch = 'https://www.youtube.com/@karafun/search?query=' + encodeURIComponent(`${song.artist} ${song.title}`);
   const songLink = link(song.title, videoSearch);
   songLink.target = '_blank';
@@ -137,10 +145,10 @@ function createSongRow(song, bottom, top) {
   for (const [i, value] of values.entries()) {
     const cell = document.createElement('td');
     cell.append(value);
-    if (i === 1) cell.title = {M: 'Male', F: 'Female', U: 'Unknown'}[song.gender];
+    if (i === 1) cell.title = [{M: 'Male', F: 'Female', B: 'Both'}[song.gender], song.leadSinger && `Lead: ${song.leadSinger}`].filter(Boolean).join(' · ');
     if (i === 2) {
       cell.title = song.top === null ? 'Range unknown; this is not a confirmed vocal-range fit.'
-        : `Published range: ${song.publishedRange || song.range}${song.note ? ' · ' + song.note : ''}`;
+        : `${song.usingGuess ? 'Estimated range' : 'Source range'}: ${song.usingGuess ? song.guessedRange : song.range}${song.note ? ' · ' + song.note : ''}${song.uncertain ? ' · ? means uncertain' : ''}`;
       cell.className = 'notes';
     }
     row.append(cell);
@@ -185,7 +193,7 @@ function search(event) {
   const octaves = [get('original').checked ? 0 : null,
     ...(get('octave1').checked ? [-1, 1] : []), ...(get('octave2').checked ? [-2, 2] : [])].filter(o => o !== null);
   const query = normalize(get('query').value);
-  const candidates = catalogue.filter(song => matchesQuery(song, query)).map(song => ({song,
+  const candidates = catalogue.filter(song => matchesQuery(song, query)).map(song => selectRange(song, get('guess-ranges').checked)).map(song => ({song,
     singerMatches: !get('singer').value || song.gender === get('singer').value,
     fit: fitSong(song, bottom, top, octaves, get('energetic').checked)}));
   const songs = candidates.filter(candidate => candidate.singerMatches && candidate.fit).map(candidate => candidate.fit).sort(compareSongs);

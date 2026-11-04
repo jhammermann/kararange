@@ -64,7 +64,14 @@ to refresh them. Keep the caches and audit files outside the published directory
 Ranges come from Singing Carrots and MyVocalRange; arrangements and source
 accuracy vary. Missing ranges are omitted, alternative arrangements are checked
 separately, and MyVocalRange male parts are converted to sounding pitch.
-`range_audit.json` documents corrections. Popularity is Deezer's indicator,
+`range_audit.json` documents corrections and suspicious ranges. `range_review.json`
+contains the manual review decisions. A question mark marks a suspicious range. The default-on “Guess likely false
+ranges” setting uses estimated lead-vocal notes for filtering; switch it off to
+use the source range instead. Both choices remain marked uncertain. Manual estimates
+choose the low and high lead-vocal notes separately, aiming to fit a voice preset
+where plausible; they are not verified transcriptions. Singer labels describe the
+vocal parts: Male, Female, or Both. Both also covers unresolved ensemble credits.
+Popularity is Deezer's indicator,
 not a play count. “Keep energetic” requires shifted versions to peak within
 three semitones of the selected upper note; it does not measure chorus energy.
 

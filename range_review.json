@@ -1,0 +1,1127 @@
+[
+  {
+    "artist": "AC / DC",
+    "title": "Highway to Hell",
+    "range": "G3-E5",
+    "reason": "Restored Singing Carrots range; the automatic octave correction was not reliable.",
+    "evidence": "https://singingcarrots.com/song?song=ac-dc-highway-to-hell"
+  },
+  {
+    "artist": "Benson Boone",
+    "title": "Beautiful Things",
+    "range": "F3-F5",
+    "reason": "Singing Carrots range appears one octave too high; independent song-range sources give F3–F5.",
+    "evidence": "https://sing.suedeai.ai/can-you-sing/beautiful-things"
+  },
+  {
+    "artist": "Britney Spears",
+    "title": "Oops!... I Did It Again",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "C#4-A4"
+  },
+  {
+    "artist": "AC / DC",
+    "title": "You Shook Me All Night Long",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "D4-E5"
+  },
+  {
+    "artist": "ABBA",
+    "title": "Mamma Mia",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "A3-A4",
+    "gender": "F"
+  },
+  {
+    "artist": "ABBA",
+    "title": "Does Your Mother Know",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "F#3-F4",
+    "gender": "M",
+    "leadSinger": "Björn Ulvaeus",
+    "evidence": "https://abbasite.com/articles/does-your-mother-know-the-anatomy-of-a-hit-single/"
+  },
+  {
+    "artist": "Alex Warren",
+    "title": "Ordinary",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "A3-A4",
+    "evidence": "https://www.hooktheory.com/theorytab/view/alex-warren/ordinary",
+    "gender": "M"
+  },
+  {
+    "artist": "Billy Joel",
+    "title": "Just the Way You Are",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "A#2-G4"
+  },
+  {
+    "artist": "Billy Ray Cyrus",
+    "title": "Achy Breaky Heart",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "E3-C#4"
+  },
+  {
+    "artist": "Bon Jovi",
+    "title": "Wanted Dead or Alive",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The earlier B3 floor loses Bon Jovi's low narrative verse; keep the upper chorus peak.",
+    "guess": "D3-A4"
+  },
+  {
+    "artist": "Calum Scott",
+    "title": "Dancing on My Own",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "C#3-A#4",
+    "gender": "M"
+  },
+  {
+    "artist": "Calum Scott",
+    "title": "You Are the Reason",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "C3-A#4",
+    "evidence": "https://en.wikipedia.org/wiki/You_Are_the_Reason",
+    "gender": "M"
+  },
+  {
+    "artist": "Chris Stapleton",
+    "title": "You Should Probably Leave",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "E3-F#4"
+  },
+  {
+    "artist": "Coolio",
+    "title": "Gangsta's Paradise",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G3-F4"
+  },
+  {
+    "artist": "Dolly Parton",
+    "title": "Jolene",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "B3-E5",
+    "evidence": "https://hummatch.me/song/jolene-dolly-parton"
+  },
+  {
+    "artist": "Elton John",
+    "title": "Your Song",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "A#2-F#4"
+  },
+  {
+    "artist": "Elton John",
+    "title": "I Guess That's Why They Call It the Blues",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "D3-F4"
+  },
+  {
+    "artist": "Elton John",
+    "title": "Don't Let the Sun Go Down on Me",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "E3-A4"
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "title": "Dreams",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G3-C5",
+    "gender": "F"
+  },
+  {
+    "artist": "Fuel",
+    "title": "Hemorrhage (In My Hands)",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Reconsidered the prior estimate: Brett Scallions's gritty chorus plausibly peaks around A4, not A5.",
+    "guess": "F#3-A4"
+  },
+  {
+    "artist": "Gotye",
+    "title": "Somebody That I Used to Know",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "D3-C5",
+    "evidence": "https://hummatch.me/song/somebody-i-used-to-know-gotye",
+    "gender": "B"
+  },
+  {
+    "artist": "Jim Croce",
+    "title": "Bad, Bad Leroy Brown",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Reconsidered the prior estimate: Croce's bouncy baritone chorus is unlikely to need A4.",
+    "guess": "B2-G4"
+  },
+  {
+    "artist": "Journey",
+    "title": "Faithfully",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "B3-B4"
+  },
+  {
+    "artist": "Journey",
+    "title": "Open Arms",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "A3-D5"
+  },
+  {
+    "artist": "Laufey",
+    "title": "From the Start",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G#3-B4",
+    "evidence": "https://pitchhighway.com/songs/laufey-from-the-start",
+    "gender": "F"
+  },
+  {
+    "artist": "Lita Ford",
+    "title": "Close My Eyes Forever",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Reconsidered the prior estimate: Lita and Ozzy's duet has a strong upper rock line, but A#5 is implausibly high.",
+    "guess": "A3-E5",
+    "gender": "B"
+  },
+  {
+    "artist": "Luke Combs",
+    "title": "Fast Car",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "D#3-F4"
+  },
+  {
+    "artist": "Melissa Etheridge",
+    "title": "I'm the Only One",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G3-C5"
+  },
+  {
+    "artist": "Morgan Wallen",
+    "title": "Last Night",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "C#3-D#4",
+    "evidence": "https://music-by-the-measures.com/last-night-morgan-wallen-song-breakdown/"
+  },
+  {
+    "artist": "Morgan Wallen",
+    "title": "I'm the Problem",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "D#3-D#4"
+  },
+  {
+    "artist": "NSYNC",
+    "title": "Bye Bye Bye",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G3-G#4",
+    "gender": "M"
+  },
+  {
+    "artist": "Noah Kahan",
+    "title": "Stick Season",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "E3-A4",
+    "evidence": "https://sing.suedeai.ai/can-you-sing/stick-season",
+    "gender": "M"
+  },
+  {
+    "artist": "Puddle of Mudd",
+    "title": "She Hates Me",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "C3-A4"
+  },
+  {
+    "artist": "Rammstein",
+    "title": "Du hast",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "D3-A4"
+  },
+  {
+    "artist": "Sam Smith",
+    "title": "I'm Not the Only One",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "F3-C5",
+    "gender": "M"
+  },
+  {
+    "artist": "Shania Twain",
+    "title": "You're Still The One",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "F#3-A4"
+  },
+  {
+    "artist": "Sisqó",
+    "title": "Thong Song",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G#3-B4"
+  },
+  {
+    "artist": "Staind",
+    "title": "Outside",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Aaron Lewis's low verse and gritty chorus fit a baritone span; the earlier B4 estimate still seems excessive.",
+    "guess": "C3-G#4"
+  },
+  {
+    "artist": "Starship",
+    "title": "Nothing's Gonna Stop Us Now",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G3-D5",
+    "gender": "B"
+  },
+  {
+    "artist": "Stevie Nicks",
+    "title": "Stop Draggin' My Heart Around",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "B3-B4"
+  },
+  {
+    "artist": "Survivor",
+    "title": "Eye of the Tiger",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "C4-C5"
+  },
+  {
+    "artist": "Teddy Swims",
+    "title": "Lose Control",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "E3-C#5",
+    "evidence": "https://sing.suedeai.ai/can-you-sing/lose-control",
+    "gender": "M"
+  },
+  {
+    "artist": "Teddy Swims",
+    "title": "The Door",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "E3-B4",
+    "gender": "M"
+  },
+  {
+    "artist": "The Chicks",
+    "title": "Cowboy Take Me Away",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "C4-D5"
+  },
+  {
+    "artist": "The Greatest Showman",
+    "title": "Never Enough",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "A#3-F5",
+    "gender": "F",
+    "leadSinger": "Loren Allred"
+  },
+  {
+    "artist": "The Jackson 5",
+    "title": "I Want You Back",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G#3-G#5",
+    "evidence": "https://hummatch.me/song/i-want-you-back-the-jackson-5"
+  },
+  {
+    "artist": "The Lion King (1994 film)",
+    "title": "Can You Feel the Love Tonight",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G3-G4",
+    "gender": "B"
+  },
+  {
+    "artist": "Tom Petty",
+    "title": "Mary Jane's Last Dance",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "E3-D4"
+  },
+  {
+    "artist": "U2",
+    "title": "With or Without You",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "A2-F#4",
+    "evidence": "https://singingcoach.ai/with-or-without-you-u2"
+  },
+  {
+    "artist": "Van Morrison",
+    "title": "Brown Eyed Girl",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "guess": "G3-G4"
+  },
+  {
+    "artist": "ABBA",
+    "title": "Lay All Your Love On Me",
+    "guess": "D4-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Reconsidered the previous low octave guess: Agnetha's main disco melody sits above D3 and rises beyond A4.",
+    "gender": "F"
+  },
+  {
+    "artist": "Anne Murray",
+    "title": "Could I Have This Dance",
+    "guess": "E3-F#4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Carly Simon",
+    "title": "You're So Vain",
+    "guess": "G3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Crystal Gayle",
+    "title": "Don't It Make My Brown Eyes Blue",
+    "guess": "E3-G#4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Eurythmics",
+    "title": "Sweet Dreams (Are Made of This)",
+    "guess": "E3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "gender": "F"
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "title": "The Chain",
+    "guess": "E3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "gender": "B"
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "title": "Gypsy",
+    "guess": "E3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "gender": "F"
+  },
+  {
+    "artist": "Joan Jett",
+    "title": "I Love Rock 'n' Roll",
+    "guess": "F3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Meredith Brooks",
+    "title": "Bitch",
+    "guess": "E3-B4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "No Doubt",
+    "title": "Spiderwebs",
+    "guess": "F3-C5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Shania Twain",
+    "title": "Any Man of Mine",
+    "guess": "D#3-D5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Shania Twain",
+    "title": "Honey I'm Home",
+    "guess": "E3-B4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Sylvia",
+    "title": "Nobody",
+    "guess": "G3-G4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "The Judds",
+    "title": "Grandpa (Tell Me 'Bout The Good Old Days)",
+    "guess": "D3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "The Mamas and the Papas",
+    "title": "Dream a Little Dream of Me",
+    "guess": "F#3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "gender": "F"
+  },
+  {
+    "artist": "Tony Orlando & Dawn",
+    "title": "Knock Three Times",
+    "guess": "F3-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "gender": "M"
+  },
+  {
+    "artist": "The Cranberries",
+    "title": "Dreams",
+    "guess": "F#3-C5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Elton John",
+    "title": "I'm Still Standing",
+    "guess": "E3-C5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Elton John",
+    "title": "Tiny Dancer",
+    "guess": "A2-G#4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "evidence": "https://singingcoach.ai/tiny-dancer-elton-john"
+  },
+  {
+    "artist": "Elton John",
+    "title": "Crocodile Rock",
+    "guess": "G3-C5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Elton John",
+    "title": "Bennie and the Jets",
+    "guess": "E3-B4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Michael Jackson",
+    "title": "Smooth Criminal",
+    "guess": "G3-C5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Moana",
+    "title": "You're Welcome",
+    "guess": "A2-A4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "gender": "M",
+    "leadSinger": "Dwayne Johnson"
+  },
+  {
+    "artist": "Toni Braxton",
+    "title": "Un-Break My Heart",
+    "guess": "D3-D#5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Black Eyed Peas",
+    "title": "Meet Me Halfway",
+    "guess": "B3-B4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable.",
+    "gender": "B"
+  },
+  {
+    "artist": "The Greatest Showman",
+    "title": "Rewrite the Stars",
+    "guess": "D#3-A#4",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "The Greatest Showman",
+    "title": "A Million Dreams",
+    "guess": "C3-C5",
+    "reason": "Estimate of the recorded lead vocal; published endpoints or octave appear unreliable."
+  },
+  {
+    "artist": "Lady Gaga",
+    "title": "Die with a Smile",
+    "guess": "G#3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The duet's main melody sits around the upper male and lower female registers; C#6 looks like an overtone or backing-part endpoint.",
+    "gender": "B"
+  },
+  {
+    "artist": "Metallica",
+    "title": "Enter Sandman",
+    "guess": "E3-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Hetfield's low verse is plausibly around E3; E2 appears to include a guitar or subharmonic."
+  },
+  {
+    "artist": "David Guetta",
+    "title": "Titanium",
+    "guess": "G3-D#5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Sia's low verse and high belted chorus are more plausible than the producer-attributed male range.",
+    "evidence": "https://singingcoach.ai/titanium-david-guetta-ft-sia",
+    "gender": "F",
+    "leadSinger": "Sia"
+  },
+  {
+    "artist": "Lady Gaga",
+    "title": "Poker Face",
+    "guess": "G3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The low spoken texture and upper backing layers likely exaggerate Gaga's main sung melody."
+  },
+  {
+    "artist": "Måneskin",
+    "title": "Beggin'",
+    "guess": "B3-E5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Damiano's gritty upper tenor chorus is demanding, but A5 is implausible for the main melody.",
+    "gender": "M"
+  },
+  {
+    "artist": "Lady Gaga",
+    "title": "Bad Romance",
+    "guess": "G3-E5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Allow for the low verse and high chorus without treating the highest layered effects as lead notes."
+  },
+  {
+    "artist": "Guns N' Roses",
+    "title": "Sweet Child O' Mine",
+    "guess": "F#3-D#5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Axl's verse is not plausibly F#2; retain a demanding upper chorus peak."
+  },
+  {
+    "artist": "No Doubt",
+    "title": "Don't Speak",
+    "guess": "F3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Gwen's low verse and belted chorus suggest a mixed-register span rather than an A5 lead peak."
+  },
+  {
+    "artist": "Black Eyed Peas",
+    "title": "I Gotta Feeling",
+    "guess": "G3-E4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The repeated group hook sits in a compact middle register; A5 likely belongs to a different layer."
+  },
+  {
+    "artist": "Katy Perry",
+    "title": "California Gurls",
+    "guess": "C4-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Katy's chorus sounds like a mid-fifth-octave pop belt rather than a Bb5 lead peak."
+  },
+  {
+    "artist": "Adele",
+    "title": "Someone Like You",
+    "guess": "G3-E5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The piano ballad's climactic lead is high, but the G5 endpoint likely overstates the main line."
+  },
+  {
+    "artist": "Kiss",
+    "title": "I Was Made For Lovin' You",
+    "guess": "E3-B4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Paul Stanley's high tenor chorus remains demanding; the B2-A5 extremes likely mix vocal layers."
+  },
+  {
+    "artist": "Shakira",
+    "title": "Waka Waka (This Time for Africa)",
+    "guess": "B3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The chant-like chorus is relatively compact; an A5 lead peak is unlikely."
+  },
+  {
+    "artist": "Shakira",
+    "title": "Hips Don't Lie",
+    "guess": "G#3-C#5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Shakira's low rhythmic verse and chorus suggest a much smaller span than Ab3-Ab5."
+  },
+  {
+    "artist": "Justin Bieber",
+    "title": "Baby",
+    "guess": "D3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Young Bieber's chorus belongs in a high youthful register, not a D4 ceiling."
+  },
+  {
+    "artist": "Lorde",
+    "title": "Royals",
+    "guess": "F#3-B4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Lorde's conversational verse and restrained chorus do not suggest an F#5 lead peak."
+  },
+  {
+    "artist": "Edward Sharpe & The Magnetic Zeros",
+    "title": "Home",
+    "guess": "C3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Account for both the low male verse and female duet lines, rather than an A5 ceiling.",
+    "gender": "B"
+  },
+  {
+    "artist": "Footloose (1984 film)",
+    "title": "Holding Out for a Hero",
+    "guess": "G3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Bonnie Tyler's gritty low phrases and high chorus are plausible within an alto span; the source options conflict.",
+    "gender": "F"
+  },
+  {
+    "artist": "Boney M.",
+    "title": "Rasputin",
+    "guess": "F#3-B4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The bass narration and sung group hook should not imply a B5 main melody.",
+    "gender": "B"
+  },
+  {
+    "artist": "Justin Bieber",
+    "title": "Love Yourself",
+    "guess": "B2-G#4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The quiet verse is low, but Bieber's upper hook rises well beyond B3."
+  },
+  {
+    "artist": "Tracy Chapman",
+    "title": "Baby Can I Hold You",
+    "guess": "E3-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Chapman's warm low voice still places the sung melody above the published A2-A3 octave.",
+    "gender": "F"
+  },
+  {
+    "artist": "One Direction",
+    "title": "What Makes You Beautiful",
+    "guess": "D3-E4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The youthful pop melody has a modest span; G2 appears too low for the verse."
+  },
+  {
+    "artist": "Elton John",
+    "title": "Don't Go Breaking My Heart",
+    "guess": "G3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Elton and Kiki's overlapping duet lines suggest a middle-register verse and higher chorus, not an all-fifth-octave range.",
+    "gender": "B"
+  },
+  {
+    "artist": "Dusty Springfield",
+    "title": "Son of a Preacher Man",
+    "guess": "G3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Dusty's warm verse starts below F4; allow a soulful upper chorus without an Ab5 ceiling."
+  },
+  {
+    "artist": "Louis Armstrong",
+    "title": "What a Wonderful World",
+    "guess": "C3-F4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Armstrong's gravel can confuse pitch detection; the ballad is unlikely to require A4."
+  },
+  {
+    "artist": "Bon Jovi",
+    "title": "Bed of Roses",
+    "guess": "F3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Bon Jovi's high chorus is credible, but the F2 verse endpoint is implausible."
+  },
+  {
+    "artist": "Alannah Myles",
+    "title": "Black Velvet",
+    "guess": "E3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Alannah's low bluesy verse is central to this song; C4-A5 misses that register."
+  },
+  {
+    "artist": "No Doubt",
+    "title": "Just A Girl",
+    "guess": "A3-E5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Gwen's emphatic chorus is high but a B5 main melody endpoint is unlikely."
+  },
+  {
+    "artist": "Rihanna",
+    "title": "Take a Bow",
+    "guess": "F3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Rihanna's low conversational verse and chorus belt suggest an octave error plus an overstated top."
+  },
+  {
+    "artist": "Queen",
+    "title": "Crazy Little Thing Called Love",
+    "guess": "D3-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Freddie's rockabilly main line is much lower than an F#5 endpoint suggests."
+  },
+  {
+    "artist": "Evanescence",
+    "title": "Call Me When You're Sober",
+    "guess": "G3-E5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Amy's lower verse and forceful chorus imply a lower range than G4-Eb6, with a high belt retained.",
+    "gender": "F"
+  },
+  {
+    "artist": "The Proclaimers",
+    "title": "I'm Gonna Be (500 Miles)",
+    "guess": "E3-B4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The Reid brothers' emphatic chorus is high; the E2 low is implausible for the sung verse."
+  },
+  {
+    "artist": "Elvis Presley",
+    "title": "Burning Love",
+    "guess": "D3-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Elvis's energetic chorus rises substantially beyond A#3; the published range sits too low."
+  },
+  {
+    "artist": "Elvis Presley",
+    "title": "Always on My Mind",
+    "guess": "C3-E4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Elvis's reflective ballad has a low baritone verse, not an A3 floor."
+  },
+  {
+    "artist": "Jet",
+    "title": "Are You Gonna Be My Girl",
+    "guess": "E3-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The verse and shouted rock chorus suggest a higher top and less extreme low than E2-D4."
+  },
+  {
+    "artist": "Christina Perri",
+    "title": "Jar of Hearts",
+    "guess": "G3-E5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Perri's restrained verses and rising chorus are unlikely to reach A5."
+  },
+  {
+    "artist": "The Nightmare Before Christmas",
+    "title": "Jack's Lament",
+    "guess": "B2-G4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Danny Elfman's theatrical baritone moves from a low narrative verse to an upper dramatic phrase.",
+    "gender": "M"
+  },
+  {
+    "artist": "Zach Bryan",
+    "title": "Something in the Orange",
+    "guess": "D3-G4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Zach Bryan's rough baritone verse sits well below D4; the chorus does not suggest E5.",
+    "gender": "M"
+  },
+  {
+    "artist": "The Red Clay Strays",
+    "title": "Wondering Why",
+    "guess": "B2-G#4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Brandon Coleman's low soul verse and upper raspy belt suggest baritone rather than B3-G#5.",
+    "gender": "M"
+  },
+  {
+    "artist": "Lady Gaga",
+    "title": "Yoü and I",
+    "guess": "G3-E5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Gaga's blues-rock verse and belted refrain are more plausible than a C#6 main line."
+  },
+  {
+    "artist": "Joan Jett",
+    "title": "I Hate Myself for Loving You",
+    "guess": "E3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Joan Jett's gritty low verse matters; the G5 top likely overstates her main chorus."
+  },
+  {
+    "artist": "Footloose (1984 film)",
+    "title": "Hurts So Good",
+    "guess": "C3-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Mellencamp's raspy upper chorus rises above the published C4 ceiling."
+  },
+  {
+    "artist": "Poison",
+    "title": "Every Rose Has Its Thorn",
+    "guess": "D#3-G#4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Bret Michaels's verse is low but not plausibly D#2; allow the higher chorus separately."
+  },
+  {
+    "artist": "Salt-N-Pepa",
+    "title": "Shoop",
+    "guess": "G3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Use the pitched female hook and approximate rap register; C6 likely reflects a non-melodic effect."
+  },
+  {
+    "artist": "Wilson Phillips",
+    "title": "Hold On",
+    "guess": "G3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The verse sits below E4 and the chorus is a middle-fifth-octave belt rather than G5."
+  },
+  {
+    "artist": "Chris Stapleton",
+    "title": "Fire Away",
+    "guess": "C#3-B4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Stapleton's bluesy low verse and high gritty chorus suggest less extreme endpoints than A2-C#5."
+  },
+  {
+    "artist": "Bonnie Raitt",
+    "title": "I Can't Make You Love Me",
+    "guess": "F3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Bonnie Raitt's intimate low phrases belong below D4 and the restrained climax does not suggest G5."
+  },
+  {
+    "artist": "Patsy Cline",
+    "title": "Crazy",
+    "guess": "G3-C#5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Patsy's warm low verse and sustained upper phrases suggest a lower register than D4-G5."
+  },
+  {
+    "artist": "Tanya Tucker",
+    "title": "Delta Dawn",
+    "guess": "G3-C5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Tanya's earthy verse and refrain are unlikely to require G5."
+  },
+  {
+    "artist": "Toby Keith",
+    "title": "I Love This Bar",
+    "guess": "B2-E4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Toby's conversational baritone melody is compact; E2-A4 likely includes non-lead extremes."
+  },
+  {
+    "artist": "Lisa Loeb",
+    "title": "Stay (I Missed You)",
+    "guess": "G3-D5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Lisa's conversational verse and stronger refrain suggest a moderate upper peak rather than G5."
+  },
+  {
+    "artist": "Jelly Roll",
+    "title": "Save Me",
+    "guess": "A2-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Jelly Roll's low verse and rough upper chorus fit a baritone span, not A3-A5.",
+    "gender": "M"
+  },
+  {
+    "artist": "The Mamas and the Papas",
+    "title": "California Dreamin'",
+    "guess": "G#3-D#5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The intertwined male and female melody is higher in the chorus but unlikely to require G5.",
+    "gender": "B"
+  },
+  {
+    "artist": "Stevie Nicks",
+    "title": "Leather And Lace",
+    "guess": "G#3-C#5",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Stevie's low duet phrases sit below Ab4; the refrain can rise above a straight octave-shifted top."
+  },
+  {
+    "artist": "The Nightmare Before Christmas",
+    "title": "Oogie Boogie's Song",
+    "guess": "B2-F4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Ken Page's bass-baritone theatrical delivery suggests a low verse and emphatic mid-register top.",
+    "gender": "M"
+  },
+  {
+    "artist": "George Strait",
+    "title": "I Can Still Make Cheyenne",
+    "guess": "A#2-E4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. George Strait's warm baritone verse belongs below Bb3; the chorus is not plausibly C5."
+  },
+  {
+    "artist": "Toby Keith",
+    "title": "Who's Your Daddy",
+    "guess": "F#2-F#4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Toby's low baritone phrases are credible, but C#5 likely overstates the chorus."
+  },
+  {
+    "artist": "Trace Adkins",
+    "title": "Honky Tonk Badonkadonk",
+    "guess": "E2-E4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. Trace's deep verse is credible; the rhythmic baritone chorus is unlikely to require B4."
+  },
+  {
+    "artist": "Harvey Danger",
+    "title": "Flagpole Sitta",
+    "guess": "F3-A4",
+    "reason": "Approximate lead-vocal estimate, not a verified transcription. The urgent rock refrain is plausible around A4; A5 likely reflects distortion or a pitch-tracking octave error."
+  },
+  {
+    "artist": "Olivia Dean",
+    "title": "Man I Need",
+    "gender": "F"
+  },
+  {
+    "artist": "KPop Demon Hunters",
+    "title": "Golden",
+    "gender": "F"
+  },
+  {
+    "artist": "ABBA",
+    "title": "Dancing Queen",
+    "gender": "F"
+  },
+  {
+    "artist": "ABBA",
+    "title": "Gimme! Gimme! Gimme! (A Man After Midnight)",
+    "gender": "F"
+  },
+  {
+    "artist": "ABBA",
+    "title": "The Winner Takes It All",
+    "gender": "F"
+  },
+  {
+    "artist": "Chappell Roan",
+    "title": "Pink Pony Club",
+    "gender": "F"
+  },
+  {
+    "artist": "Evanescence",
+    "title": "My Immortal",
+    "gender": "F"
+  },
+  {
+    "artist": "KPop Demon Hunters",
+    "title": "What It Sounds Like",
+    "gender": "F"
+  },
+  {
+    "artist": "ABBA",
+    "title": "Super Trouper",
+    "gender": "F"
+  },
+  {
+    "artist": "Everybody Loves An Outlaw",
+    "title": "I See Red",
+    "gender": "F"
+  },
+  {
+    "artist": "Grease (film)",
+    "title": "Hopelessly Devoted to You",
+    "gender": "F"
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "title": "Landslide",
+    "gender": "F"
+  },
+  {
+    "artist": "Chappell Roan",
+    "title": "Hot to Go!",
+    "gender": "F"
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "title": "Rhiannon",
+    "gender": "F"
+  },
+  {
+    "artist": "The Carpenters",
+    "title": "(They Long to Be) Close to You",
+    "gender": "F"
+  },
+  {
+    "artist": "Chappell Roan",
+    "title": "Red Wine Supernova",
+    "gender": "F"
+  },
+  {
+    "artist": "The Carpenters",
+    "title": "Top of the World",
+    "gender": "F"
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "title": "Gold Dust Woman",
+    "gender": "F"
+  },
+  {
+    "artist": "Little Big Town",
+    "title": "Girl Crush",
+    "gender": "F"
+  },
+  {
+    "artist": "Little Big Town",
+    "title": "Pontoon",
+    "gender": "F"
+  },
+  {
+    "artist": "Sugarland",
+    "title": "Stay",
+    "gender": "F"
+  },
+  {
+    "artist": "Tracy Chapman",
+    "title": "Fast Car",
+    "gender": "F"
+  },
+  {
+    "artist": "Tracy Chapman",
+    "title": "Give Me One Reason",
+    "gender": "F"
+  },
+  {
+    "artist": "KPop Demon Hunters",
+    "title": "Soda Pop",
+    "gender": "M"
+  },
+  {
+    "artist": "Wheatus",
+    "title": "Teenage Dirtbag",
+    "gender": "M"
+  },
+  {
+    "artist": "Mario",
+    "title": "Let Me Love You",
+    "gender": "M"
+  },
+  {
+    "artist": "Neon Trees",
+    "title": "Everybody Talks",
+    "gender": "M"
+  },
+  {
+    "artist": "Evanescence",
+    "title": "Bring Me to Life",
+    "gender": "B"
+  },
+  {
+    "artist": "Grease (film)",
+    "title": "You're the One That I Want",
+    "gender": "B"
+  },
+  {
+    "artist": "Aqua",
+    "title": "Barbie Girl",
+    "gender": "B"
+  },
+  {
+    "artist": "Pinkfong",
+    "title": "Baby Shark",
+    "gender": "B"
+  },
+  {
+    "artist": "Zach Bryan",
+    "title": "I Remember Everything",
+    "gender": "B"
+  },
+  {
+    "artist": "The B-52's",
+    "title": "Love Shack",
+    "gender": "B"
+  },
+  {
+    "artist": "Sonny & Cher",
+    "title": "I Got You Babe",
+    "gender": "B"
+  },
+  {
+    "artist": "High School Musical",
+    "title": "Breaking Free",
+    "gender": "B"
+  },
+  {
+    "artist": "The Nightmare Before Christmas",
+    "title": "This Is Halloween",
+    "gender": "B"
+  },
+  {
+    "artist": "Dirty Dancing",
+    "title": "(I've Had) The Time of My Life",
+    "gender": "B"
+  },
+  {
+    "artist": "Little Shop of Horrors (film)",
+    "title": "Suddenly, Seymour",
+    "gender": "B"
+  },
+  {
+    "artist": "Eminem",
+    "title": "Love The Way You Lie",
+    "gender": "B"
+  },
+  {
+    "artist": "Jay-Z",
+    "title": "Empire State of Mind",
+    "gender": "B"
+  },
+  {
+    "artist": "Lady A",
+    "title": "Need You Now",
+    "gender": "B"
+  },
+  {
+    "artist": "Daniel Caesar",
+    "title": "Best Part",
+    "gender": "B"
+  },
+  {
+    "artist": "The Phantom of the Opera (musical)",
+    "title": "The Phantom of the Opera",
+    "gender": "B"
+  },
+  {
+    "artist": "Tangled",
+    "title": "I See the Light",
+    "gender": "B"
+  },
+  {
+    "artist": "Frozen (2013 film)",
+    "title": "Love Is an Open Door",
+    "gender": "B"
+  },
+  {
+    "artist": "Aladdin (1992 film)",
+    "title": "A Whole New World",
+    "gender": "B"
+  },
+  {
+    "artist": "Kid Rock",
+    "title": "Picture",
+    "gender": "B"
+  },
+  {
+    "artist": "John Prine",
+    "title": "In Spite of Ourselves",
+    "gender": "B"
+  },
+  {
+    "artist": "Marvin Gaye",
+    "title": "Ain't No Mountain High Enough",
+    "gender": "B"
+  },
+  {
+    "artist": "Johnny Cash",
+    "title": "Jackson",
+    "gender": "B"
+  }
+]

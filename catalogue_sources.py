@@ -107,7 +107,7 @@ def source_records(root_cache, extra_sources):
     return list(carrots.values()), list(vocal.values())
 
 
-def enrich_ranges(rows, root_cache, extra_sources):
+def enrich_ranges(rows, root_cache, extra_sources, manual_ranges=None):
     carrots, vocal = source_records(root_cache, extra_sources)
     genders = defaultdict(set)
     for song in carrots:
@@ -118,7 +118,8 @@ def enrich_ranges(rows, root_cache, extra_sources):
         by_title[title_key(song['title'])].append(song)
     for song in vocal:
         vocal_title[title_key(song['title'])].append(song)
-    audit = dict(total=len(rows), corrections=[], unknown=[], restored=[], multiple_ranges=[])
+    audit = dict(total=len(rows), corrections=[], uncertain=[], unknown=[], restored=[], multiple_ranges=[])
+    manual_ranges = manual_ranges or {}
     for row in rows:
         names = [row['artist']] + ([row['recordingArtist']] if row.get('recordingArtist') else [])
         candidates = [s for s in by_title[title_key(row['title'])] if any(artist_matches(name, s['artist']) for name in names)]
@@ -139,6 +140,8 @@ def enrich_ranges(rows, root_cache, extra_sources):
                 continue
             correction, evidence = 0, None
             for other in my_matches:
+                if (row['artist'], row['title']) not in {('Coldplay', 'Viva La Vida'), ('Johnny Cash', 'Ring of Fire')}:
+                    continue
                 if gender not in ('M', 'F') or not source['key'] or not other['key'] or normalize(source['key']) != normalize(other['key']):
                     continue
                 sounding = shifted_range(other['ranges'], -12 if gender == 'M' else 0)
@@ -175,7 +178,23 @@ def enrich_ranges(rows, root_cache, extra_sources):
             audit['multiple_ranges'].append(dict(artist=row['artist'], title=row['title'], ranges=[o['range'] for o in options]))
             for option in options:
                 option['note'] = 'Alternative published arrangement; range varies between sources.'
-        row.update(gender=gender, rangeOptions=options)
+        manual = manual_ranges.get((row['artist'], row['title']))
+        if manual and options:
+            if manual.get('range'):
+                previous = options[0]['range']
+                options = [dict(options[0], range=manual['range'], note=manual['reason'], evidence=manual.get('evidence'))]
+                audit['corrections'].append(dict(artist=row['artist'], title=row['title'], published=previous, range=manual['range'], evidence=manual.get('evidence'), reason=manual['reason']))
+            elif manual.get('guess'):
+                for option in options:
+                    option['uncertain'] = True
+                    option['guessedRange'] = manual['guess']
+                    option['note'] = manual['reason']
+                    if manual.get('evidence'):
+                        option['evidence'] = manual['evidence']
+                audit['uncertain'].append(dict(artist=row['artist'], title=row['title'], ranges=[o['range'] for o in options], guess=manual['guess'], reason=manual['reason'], evidence=manual.get('evidence')))
+            gender = manual.get('gender', gender)
+            row['leadSinger'] = manual.get('leadSinger')
+        row.update(gender=gender if gender in ('M', 'F') else 'B', rangeOptions=options)
         if options and row['status'] != 'matched':
             audit['restored'].append(dict(artist=row['artist'], title=row['title']))
         if not options:

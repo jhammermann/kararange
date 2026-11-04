@@ -122,7 +122,9 @@ def main():
                     print(f'Popularity: {count}/{len(pending)}', flush=True)
     for row in rows:
         row['recordingArtist'] = cache.get(cache_key(row), {}).get('artist', '')
-    audit = enrich_ranges(rows, root_cache, extra_sources)
+    manual = json.loads((HERE / 'range_review.json').read_text())
+    manual_ranges = {(entry['artist'], entry['title']): entry for entry in manual}
+    audit = enrich_ranges(rows, root_cache, extra_sources, manual_ranges)
     songs = []
     for row in rows:
         popularity = cache.get(cache_key(row), {})
@@ -130,7 +132,7 @@ def main():
         primary = options[0] if options else {}
         songs.append(dict(title=row['title'], artist=row['artist'],
                           sourceArtist=primary.get('sourceArtist', row['source_artist']),
-                          sourceTitle=primary.get('sourceTitle', row['source_title']), gender=row['gender'],
+                          sourceTitle=primary.get('sourceTitle', row['source_title']), gender=row['gender'], leadSinger=row.get('leadSinger'),
                           range=primary.get('range'), source=primary.get('source'), rangeOptions=options,
                           rank=popularity.get('rank'), deezer=popularity.get('url')))
     songs.sort(key=lambda s: (-(s['rank'] if s['rank'] is not None else -1),
