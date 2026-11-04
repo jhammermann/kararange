@@ -276,6 +276,7 @@ get('finder').addEventListener('submit', search);
 get('finder').addEventListener('change', search);
 let searchTimer;
 get('query').addEventListener('input', () => {
+  if (get('query').value.trim()) get('range-selection').open = false;
   clearTimeout(searchTimer);
   searchTimer = setTimeout(search, 100);
 });
