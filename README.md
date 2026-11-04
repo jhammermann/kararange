@@ -85,6 +85,7 @@ silent. Presets play their low and high notes together.
 
 - Cat image by Levopop.
 - Luckiest Guy by Astigmatic: [Apache 2.0 license](dist/vendor/luckiest-guy.LICENSE.txt).
+- [Redaction by Jeremy Mickel](https://github.com/jeremymickel/Redaction): [SIL Open Font License](dist/vendor/redaction.LICENSE.txt).
 - noUiSlider 15.8.1: [MIT license](dist/vendor/nouislider.LICENSE.md).
 - Salamander Grand Piano by Alexander Holm:
   [CC BY 3.0 attribution and sample details](dist/vendor/piano.LICENSE.md).

@@ -34,7 +34,10 @@
 </script>
 <style>
   @font-face { font-family: 'Luckiest Guy'; src: url('vendor/luckiest-guy.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-  body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #edf4ff; color: #171717; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  @font-face { font-family: 'Redaction'; src: url('vendor/redaction-regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Redaction'; src: url('vendor/redaction-bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Redaction'; src: url('vendor/redaction-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+  body { max-width: 850px; margin: 32px auto; padding: 0 12px; background: #edf4ff; color: #171717; font-family: 'Redaction', Georgia, serif; }
   h1 { color: #0277b3; text-align: center; font-family: 'Luckiest Guy', 'Trebuchet MS', sans-serif; font-size: clamp(38px, 9vw, 50px); font-weight: 400; }  #reset-search { width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
   .header-image { display: block; width: 160px; max-width: 100%; height: auto; margin: 0 auto 16px; }
   .intro { text-align: center; }
@@ -65,7 +68,7 @@
   .notes { white-space: nowrap; font-weight: bold; }
   .popularity { width: 5rem; text-align: center; }
   @media (max-width: 480px) {
-    .popularity { width: 3.3rem; }
+    .popularity { width: 4.75rem; }
     .range-column { width: 7rem; }
     th, td { padding: 3px; }
     #sort-range, #sort-popularity { padding: 2px; }
@@ -126,16 +129,16 @@
 <p id="status" role="status" aria-live="polite">Loading songs…</p>
 <div class="table-scroll">
 <table border="1" cellspacing="0" cellpadding="6" id="results" hidden>
-  <colgroup><col><col class="popularity"><col class="range-column"></colgroup>
-  <thead><tr><th scope="col">Song</th><th scope="col" id="popularity-header" class="popularity" aria-sort="descending"><button type="button" id="sort-popularity" title="Red: less popular. Bright green: more popular. Click to reverse sort.">Popular <span class="sort-arrow" id="popularity-arrow">↓</span></button></th><th scope="col" id="range-header" aria-sort="none"><button type="button" id="sort-range" title="Red: lower range. Green: more powerful. Sort by highest note, then lowest note">Range <span class="sort-arrow" id="range-arrow">↕</span></button></th></tr></thead>
+  <colgroup><col><col class="range-column"><col class="popularity"></colgroup>
+  <thead><tr><th scope="col">Song</th><th scope="col" id="range-header" aria-sort="none"><button type="button" id="sort-range" title="Red: lower range. Green: more powerful. Sort by highest note, then lowest note">Range <span class="sort-arrow" id="range-arrow">↕</span></button></th><th scope="col" id="popularity-header" class="popularity" aria-sort="descending"><button type="button" id="sort-popularity" title="Red: less popular. Bright green: more popular. Click to reverse sort.">Popular <span class="sort-arrow" id="popularity-arrow">↓</span></button></th></tr></thead>
   <tbody id="songs"></tbody>
 </table>
 </div>
 <div class="table-scroll" id="excluded-results" hidden>
 <table border="1" cellspacing="0" cellpadding="6" id="excluded-table">
   <caption id="excluded-caption">Filtered out</caption>
-  <colgroup><col><col class="popularity"><col class="range-column"></colgroup>
-  <thead><tr><th scope="col">Song</th><th scope="col" class="popularity">Popular</th><th scope="col">Range</th></tr></thead>
+  <colgroup><col><col class="range-column"><col class="popularity"></colgroup>
+  <thead><tr><th scope="col">Song</th><th scope="col">Range</th><th scope="col" class="popularity">Popular</th></tr></thead>
   <tbody id="excluded-songs"></tbody>
 </table>
 </div>
@@ -154,6 +157,6 @@
 <script src="vendor/nouislider.min.js"></script>
 <script src="vendor/piano-samples.js"></script>
 <script src="piano.js"></script>
-<script src="app.js"></script>
+<script src="app.js?v=20261104"></script>
 </body>
 </html>

@@ -119,7 +119,7 @@ function powerScore(song) {
 function powerColor(song, minPower, maxPower) {
   const span = maxPower - minPower;
   const t = span ? (powerScore(song) - minPower) / span : 1;
-  return colorScale(t, [[0, [210, 35, 35]], [0.5, [165, 115, 0]], [1, [0, 155, 45]]]);
+  return colorScale(t, [[0, [240, 45, 45]], [0.5, [225, 175, 0]], [1, [0, 155, 45]]]);
 }
 
 function popularityColor(rank) {
@@ -163,6 +163,7 @@ function createSongRow(song, minPower, maxPower) {
   rangeText.textContent = range;
   if (song.top !== null) rangeText.style.color = powerColor(song, minPower, maxPower);
   rangeCell.append(octave, rangeText);
+  row.append(rangeCell);
   for (const [name, known, color, label] of [
     ['popularity', song.rank !== null, song.rank === null ? null : popularityColor(song.rank),
       song.rank === null ? 'Popularity unavailable' : `Deezer popularity: ${song.rank.toLocaleString()}`]
@@ -178,7 +179,6 @@ function createSongRow(song, minPower, maxPower) {
     cell.append(swatch);
     row.append(cell);
   }
-  row.append(rangeCell);
   return row;
 }
 
