@@ -49,7 +49,8 @@
   table { width: 100%; background: white; table-layout: fixed; }
   th, td { padding: 4px; }
   td:first-child { overflow-wrap: anywhere; }
-  td:first-child > a { font-size: calc(1em + 2pt); }
+  td:first-child > a { font-size: calc(1em + 2pt); color: #29343b; text-decoration-color: #c1c9cd; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  td:first-child > a:hover, td:first-child > a:focus-visible { color: #006b73; text-decoration-color: currentColor; }
   .artist { display: block; font-style: italic; }
   .range-column { width: 8rem; }
   .octave-marker { display: inline-block; width: 2em; text-align: center; font-weight: bold; }
