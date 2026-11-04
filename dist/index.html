@@ -116,6 +116,8 @@
   </details>
   <input type="hidden" id="low" name="low" value="C3">
   <input type="hidden" id="high" name="high" value="C5">
+  <details id="options">
+    <summary>Options</summary>
   <p class="control-row">
     <label for="singer">Singer
     <select id="singer" name="singer"><option value="">Any</option><option value="M">Male</option><option value="F">Female</option><option value="B">Both</option></select></label>
@@ -125,6 +127,7 @@
     <label title="Use estimated notes where the published range looks wrong; ? marks both versions."><input type="checkbox" id="guess-ranges" checked> Guess likely false ranges</label>
     <label title="Octave-shifted versions must peak within 3 semitones of your highest note."><input type="checkbox" id="energetic" checked> Keep powerful </label>
   </p>
+  </details>
 </form>
 <p id="status" role="status" aria-live="polite">Loading songs…</p>
 <div class="table-scroll">
