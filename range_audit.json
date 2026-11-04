@@ -1,0 +1,1161 @@
+{
+  "total": 1000,
+  "corrections": [
+    {
+      "artist": "AC / DC",
+      "title": "Highway to Hell",
+      "published": "G3-E5",
+      "range": "G2-E4",
+      "semitones": -12,
+      "source": "https://singingcarrots.com/song?song=ac-dc-highway-to-hell",
+      "evidence": "https://www.myvocalrange.com/songs.php?s=A&a=AC/DC",
+      "key": "A Major"
+    },
+    {
+      "artist": "Coldplay",
+      "title": "Viva La Vida",
+      "published": "D#4-G#5",
+      "range": "D#3-G#4",
+      "semitones": -12,
+      "source": "https://singingcarrots.com/song?song=coldplay-viva-la-vida",
+      "evidence": "https://www.myvocalrange.com/songs.php?s=C&a=Coldplay",
+      "key": "Ab Major"
+    },
+    {
+      "artist": "Johnny Cash",
+      "title": "Ring of Fire",
+      "published": "F#3-A4",
+      "range": "F#2-A3",
+      "semitones": -12,
+      "source": "https://singingcarrots.com/song?song=johnny-cash-ring-of-fire",
+      "evidence": "https://www.myvocalrange.com/songs.php?s=J&a=Johnny Cash",
+      "key": "G Major"
+    }
+  ],
+  "unknown": [
+    {
+      "artist": "8 Mile",
+      "title": "Lose Yourself"
+    },
+    {
+      "artist": "A Star is Born (2018 film)",
+      "title": "Shallow"
+    },
+    {
+      "artist": "ADÉLA",
+      "title": "Nicole Kidman"
+    },
+    {
+      "artist": "Afroman",
+      "title": "Crazy Rap"
+    },
+    {
+      "artist": "Alan Jackson",
+      "title": "Livin' on Love"
+    },
+    {
+      "artist": "Alice in Chains",
+      "title": "Nutshell"
+    },
+    {
+      "artist": "Alicia Keys",
+      "title": "Girl on Fire (main version)"
+    },
+    {
+      "artist": "All Time Low",
+      "title": "Dear Maria, Count Me in"
+    },
+    {
+      "artist": "Andrew Gold",
+      "title": "The Addams Family"
+    },
+    {
+      "artist": "Bad Bunny",
+      "title": "Tití me preguntó"
+    },
+    {
+      "artist": "Big & Rich",
+      "title": "Save a Horse (Ride a Cowboy)"
+    },
+    {
+      "artist": "Big Sean",
+      "title": "I Don't Fuck with You"
+    },
+    {
+      "artist": "Billy Joel",
+      "title": "Movin' Out (Anthony's Song)"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "title": "My Humps"
+    },
+    {
+      "artist": "Blake Shelton",
+      "title": "Ol' Red"
+    },
+    {
+      "artist": "Blue Swede",
+      "title": "Hooked On a Feeling"
+    },
+    {
+      "artist": "Boney M.",
+      "title": "Daddy Cool"
+    },
+    {
+      "artist": "Buckcherry",
+      "title": "Crazy Bitch"
+    },
+    {
+      "artist": "Cage the Elephant",
+      "title": "Ain't No Rest for the Wicked"
+    },
+    {
+      "artist": "Cardi B",
+      "title": "WAP"
+    },
+    {
+      "artist": "Cardi B",
+      "title": "Bodak Yellow"
+    },
+    {
+      "artist": "Cee Lo Green",
+      "title": "F**k You"
+    },
+    {
+      "artist": "China Anne McClain",
+      "title": "Calling All The Monsters"
+    },
+    {
+      "artist": "Clarence Carter",
+      "title": "Strokin'"
+    },
+    {
+      "artist": "Conway Twitty",
+      "title": "Goodbye Time"
+    },
+    {
+      "artist": "Conway Twitty",
+      "title": "Slow Hand"
+    },
+    {
+      "artist": "Craig Morgan",
+      "title": "Almost Home"
+    },
+    {
+      "artist": "David Allan Coe",
+      "title": "The Ride"
+    },
+    {
+      "artist": "Diana Ross",
+      "title": "Endless Love"
+    },
+    {
+      "artist": "Dion & The Belmonts",
+      "title": "Runaround Sue"
+    },
+    {
+      "artist": "Dolly Parton",
+      "title": "9 to 5"
+    },
+    {
+      "artist": "Don Williams",
+      "title": "Tulsa Time"
+    },
+    {
+      "artist": "Dr. Dre",
+      "title": "Forgot About Dre"
+    },
+    {
+      "artist": "Drowning Pool",
+      "title": "Bodies"
+    },
+    {
+      "artist": "Dusty Springfield",
+      "title": "Spooky"
+    },
+    {
+      "artist": "Ella Langley",
+      "title": "Choosin' Texas"
+    },
+    {
+      "artist": "Ella Langley",
+      "title": "You Look Like You Love Me"
+    },
+    {
+      "artist": "Ella Langley",
+      "title": "Be Her"
+    },
+    {
+      "artist": "Ella Langley",
+      "title": "Weren't for the Wind"
+    },
+    {
+      "artist": "Elton John",
+      "title": "Rocket Man (I Think It's Going to Be a Long, Long"
+    },
+    {
+      "artist": "Elvis Presley",
+      "title": "The Wonder of You (live 1970)"
+    },
+    {
+      "artist": "Elvis Presley",
+      "title": "Can't Help Falling in Love (with the Royal Philharmonic Orchestra)"
+    },
+    {
+      "artist": "Eminem",
+      "title": "The Real Slim Shady"
+    },
+    {
+      "artist": "Erykah Badu",
+      "title": "Tyrone"
+    },
+    {
+      "artist": "Eve 6",
+      "title": "Inside Out"
+    },
+    {
+      "artist": "Frank Sinatra",
+      "title": "New York, New York"
+    },
+    {
+      "artist": "Frank Sinatra",
+      "title": "The Way You Look Tonight"
+    },
+    {
+      "artist": "Frank Sinatra",
+      "title": "Summer Wind (Solo)"
+    },
+    {
+      "artist": "Garth Brooks",
+      "title": "Much Too Young (To Feel This Damn Old)"
+    },
+    {
+      "artist": "Garth Brooks",
+      "title": "Callin' Baton Rouge"
+    },
+    {
+      "artist": "Garth Brooks",
+      "title": "To Make You Feel My Love"
+    },
+    {
+      "artist": "George Jones",
+      "title": "Grand Tour"
+    },
+    {
+      "artist": "George Strait",
+      "title": "Amarillo by Morning"
+    },
+    {
+      "artist": "George Strait",
+      "title": "The Fireman"
+    },
+    {
+      "artist": "Ginuwine",
+      "title": "Pony"
+    },
+    {
+      "artist": "Godsmack",
+      "title": "Voodoo"
+    },
+    {
+      "artist": "Grease (film)",
+      "title": "The Grease Mega-Mix"
+    },
+    {
+      "artist": "Hamilton",
+      "title": "Satisfied"
+    },
+    {
+      "artist": "Hank Williams, Jr.",
+      "title": "A Country Boy Can Survive"
+    },
+    {
+      "artist": "Hank Williams, Jr.",
+      "title": "Dinosaur"
+    },
+    {
+      "artist": "Hank Williams, Jr.",
+      "title": "Whiskey Bent and Hell Bound"
+    },
+    {
+      "artist": "Happy Birthday Songs",
+      "title": "Happy Birthday"
+    },
+    {
+      "artist": "Harry Belafonte",
+      "title": "The Banana Boat Song (Day-O)"
+    },
+    {
+      "artist": "Harry Belafonte",
+      "title": "Jump in the Line (Shake, Señora)"
+    },
+    {
+      "artist": "Hercules (1997 film)",
+      "title": "I Won't Say (I'm in Love) (Movie Version)"
+    },
+    {
+      "artist": "Hermes House Band",
+      "title": "Country Roads"
+    },
+    {
+      "artist": "Hocus Pocus (film)",
+      "title": "I Put a Spell on You"
+    },
+    {
+      "artist": "Hollywood Undead",
+      "title": "Everywhere I Go"
+    },
+    {
+      "artist": "Jill Scott",
+      "title": "The Way"
+    },
+    {
+      "artist": "Jo Dee Messina",
+      "title": "Heads Carolina, Tails California"
+    },
+    {
+      "artist": "Joe Cocker",
+      "title": "Unchain My Heart"
+    },
+    {
+      "artist": "John Anderson",
+      "title": "Seminole Wind"
+    },
+    {
+      "artist": "John Michael Montgomery",
+      "title": "Sold (The Grundy County Auction Incident)"
+    },
+    {
+      "artist": "John Michael Montgomery",
+      "title": "Be My Baby Tonight"
+    },
+    {
+      "artist": "Johnny Cash",
+      "title": "Sunday Morning Coming Down"
+    },
+    {
+      "artist": "Justin Bieber",
+      "title": "Beauty and a Beat"
+    },
+    {
+      "artist": "KATSEYE",
+      "title": "Animal"
+    },
+    {
+      "artist": "KATSEYE",
+      "title": "Hootie Frutti"
+    },
+    {
+      "artist": "Keith Sweat",
+      "title": "Nobody"
+    },
+    {
+      "artist": "Kool and the Gang",
+      "title": "Celebration"
+    },
+    {
+      "artist": "Lil Wayne",
+      "title": "A Milli"
+    },
+    {
+      "artist": "Lil' Jon",
+      "title": "Lovers and Friends"
+    },
+    {
+      "artist": "Limp Bizkit",
+      "title": "Break Stuff"
+    },
+    {
+      "artist": "Linkin Park",
+      "title": "In the End"
+    },
+    {
+      "artist": "Lionel Richie",
+      "title": "All Night Long (All Night)"
+    },
+    {
+      "artist": "Little Big Town",
+      "title": "Wine, Beer, Whiskey"
+    },
+    {
+      "artist": "Loretta Lynn",
+      "title": "You Ain't Woman Enough (To Take My Man)"
+    },
+    {
+      "artist": "Lou Bega",
+      "title": "Mambo No. 5"
+    },
+    {
+      "artist": "Lou Rawls",
+      "title": "You'll Never Find Another Love Like Mine"
+    },
+    {
+      "artist": "Luke Combs",
+      "title": "Where the Wild Things Are"
+    },
+    {
+      "artist": "Lustra",
+      "title": "Scotty Doesn't Know"
+    },
+    {
+      "artist": "Lynn Anderson",
+      "title": "Rose Garden"
+    },
+    {
+      "artist": "Marilyn Manson",
+      "title": "Sweet Dreams (Are Made of This)"
+    },
+    {
+      "artist": "Mary J. Blige",
+      "title": "I'm Goin' Down"
+    },
+    {
+      "artist": "Matchbox Twenty",
+      "title": "3AM"
+    },
+    {
+      "artist": "Meat Loaf",
+      "title": "Paradise by the Dashboard Light"
+    },
+    {
+      "artist": "Miley Cyrus",
+      "title": "Jolene"
+    },
+    {
+      "artist": "Miranda Lambert",
+      "title": "Tequila Does"
+    },
+    {
+      "artist": "Moana",
+      "title": "How Far I'll Go (Auli'i Cravalho)"
+    },
+    {
+      "artist": "Morgan Wallen",
+      "title": "Cover Me Up"
+    },
+    {
+      "artist": "My Chemical Romance",
+      "title": "Helena"
+    },
+    {
+      "artist": "My Chemical Romance",
+      "title": "I'm Not Okay (I Promise)"
+    },
+    {
+      "artist": "Nathaniel Rateliff",
+      "title": "S.O.B."
+    },
+    {
+      "artist": "Nelly Furtado",
+      "title": "Promiscuous"
+    },
+    {
+      "artist": "Olivia Dean",
+      "title": "So Easy (To Fall in Love)"
+    },
+    {
+      "artist": "Olivia Rodrigo",
+      "title": "stupid song"
+    },
+    {
+      "artist": "Olivia Rodrigo",
+      "title": "the cure"
+    },
+    {
+      "artist": "Olivia Rodrigo",
+      "title": "expectations"
+    },
+    {
+      "artist": "Paramore",
+      "title": "All I Wanted"
+    },
+    {
+      "artist": "Patsy Cline",
+      "title": "Walkin' after Midnight (1961)"
+    },
+    {
+      "artist": "Patsy Cline",
+      "title": "Walkin' after Midnight (1959)"
+    },
+    {
+      "artist": "Pearl Jam",
+      "title": "Last Kiss"
+    },
+    {
+      "artist": "Pink",
+      "title": "Just Give Me a Reason"
+    },
+    {
+      "artist": "Pistol Annies",
+      "title": "I Feel a Sin Comin' on"
+    },
+    {
+      "artist": "Pitch Perfect",
+      "title": "Cups (You're Gonna Miss Me When I'm Gone)"
+    },
+    {
+      "artist": "Plain White T's",
+      "title": "Hey There Delilah (album version)"
+    },
+    {
+      "artist": "Radiohead",
+      "title": "Creep (acoustic)"
+    },
+    {
+      "artist": "Ray Price",
+      "title": "For the Good Times"
+    },
+    {
+      "artist": "Rehab",
+      "title": "Bartender Song (Sittin' at a Bar)"
+    },
+    {
+      "artist": "Ronan Keating",
+      "title": "When You Say Nothing at All"
+    },
+    {
+      "artist": "Rosé (??)",
+      "title": "APT."
+    },
+    {
+      "artist": "Sam Fender",
+      "title": "Rein Me In"
+    },
+    {
+      "artist": "Santana",
+      "title": "Black Magic Woman (single version)"
+    },
+    {
+      "artist": "Scooby-Doo",
+      "title": "What's New, Scooby-Doo?"
+    },
+    {
+      "artist": "Seether",
+      "title": "Broken (feat. Amy Lee)"
+    },
+    {
+      "artist": "Shaboozey",
+      "title": "A Bar Song (Tipsy)"
+    },
+    {
+      "artist": "Shania Twain",
+      "title": "Whose Bed Have Your Boots Been Under?"
+    },
+    {
+      "artist": "Shenandoah",
+      "title": "Two Dozen Roses"
+    },
+    {
+      "artist": "Shinedown",
+      "title": "Simple Man (rock version)"
+    },
+    {
+      "artist": "SIENNA SPIRO",
+      "title": "Great Expectation"
+    },
+    {
+      "artist": "SIENNA SPIRO",
+      "title": "Die on This Hill"
+    },
+    {
+      "artist": "Sir Mix-a-Lot",
+      "title": "Baby Got Back"
+    },
+    {
+      "artist": "Smash Mouth",
+      "title": "I'm a Believer"
+    },
+    {
+      "artist": "STELLA LEFTY",
+      "title": "Boston"
+    },
+    {
+      "artist": "Sunshine Anderson",
+      "title": "Heard it All Before"
+    },
+    {
+      "artist": "T-Pain",
+      "title": "Buy U A Drank (Shawty Snappin)"
+    },
+    {
+      "artist": "Tame Impala",
+      "title": "Dracula"
+    },
+    {
+      "artist": "Tenacious D",
+      "title": "Fuck Her Gently"
+    },
+    {
+      "artist": "Tenacious D",
+      "title": "Tribute"
+    },
+    {
+      "artist": "Tevin Campbell",
+      "title": "Can We Talk?"
+    },
+    {
+      "artist": "The B-52's",
+      "title": "Love Shack (single edit)"
+    },
+    {
+      "artist": "The Band of Heathens",
+      "title": "Hurricane"
+    },
+    {
+      "artist": "The Champs",
+      "title": "Tequila"
+    },
+    {
+      "artist": "The Charlie Daniels Band",
+      "title": "Devil Went Down to Georgia"
+    },
+    {
+      "artist": "The Chicks",
+      "title": "Landslide"
+    },
+    {
+      "artist": "The Commitments",
+      "title": "Mustang Sally"
+    },
+    {
+      "artist": "The Fugees",
+      "title": "Killing Me Softly"
+    },
+    {
+      "artist": "The Judds",
+      "title": "Mama He's Crazy"
+    },
+    {
+      "artist": "The Notorious B.I.G.",
+      "title": "Juicy"
+    },
+    {
+      "artist": "The Pointer Sisters",
+      "title": "Fire"
+    },
+    {
+      "artist": "The Searchers",
+      "title": "Love Potion No. 9"
+    },
+    {
+      "artist": "Tina Turner",
+      "title": "Proud Mary"
+    },
+    {
+      "artist": "Tracy Byrd",
+      "title": "Watermelon Crawl"
+    },
+    {
+      "artist": "Travis Tritt",
+      "title": "Help Me Hold On"
+    },
+    {
+      "artist": "Tyler Childers",
+      "title": "Feathered Indians"
+    },
+    {
+      "artist": "Tyler Childers",
+      "title": "Whitehouse Road"
+    },
+    {
+      "artist": "UB40",
+      "title": "Red Red Wine"
+    },
+    {
+      "artist": "Uncle Kracker",
+      "title": "Drift Away"
+    },
+    {
+      "artist": "Vanilla Ice",
+      "title": "Ice Ice Baby"
+    },
+    {
+      "artist": "Waka Flocka Flame",
+      "title": "No Hands"
+    },
+    {
+      "artist": "Waylon Jennings",
+      "title": "Luckenbach, Texas"
+    },
+    {
+      "artist": "Whiskey Myers",
+      "title": "Broken Window Serenade"
+    },
+    {
+      "artist": "Willie Nelson",
+      "title": "Seven Spanish Angels"
+    },
+    {
+      "artist": "Wynonna Judd",
+      "title": "No One Else On Earth"
+    },
+    {
+      "artist": "Zac Brown Band",
+      "title": "Chicken Fried (Home Grown Version)"
+    },
+    {
+      "artist": "Zach Top",
+      "title": "I Never Lie"
+    },
+    {
+      "artist": "Zara Larsson",
+      "title": "Midnight Sun"
+    }
+  ],
+  "restored": [
+    {
+      "artist": "A Star is Born (2018 film)",
+      "title": "Always Remember Us This Way"
+    },
+    {
+      "artist": "Aladdin (1992 film)",
+      "title": "A Whole New World"
+    },
+    {
+      "artist": "Billie Eilish",
+      "title": "Lovely"
+    },
+    {
+      "artist": "Black Eyed Peas",
+      "title": "Meet Me Halfway"
+    },
+    {
+      "artist": "Bob Seger",
+      "title": "Old Time Rock & Roll"
+    },
+    {
+      "artist": "Bob Seger",
+      "title": "Night Moves"
+    },
+    {
+      "artist": "Bob Seger",
+      "title": "Against the Wind"
+    },
+    {
+      "artist": "Bobby Boris Pickett",
+      "title": "Monster Mash"
+    },
+    {
+      "artist": "Cars",
+      "title": "Life is a Highway"
+    },
+    {
+      "artist": "Coolio",
+      "title": "Gangsta's Paradise"
+    },
+    {
+      "artist": "Creed",
+      "title": "With Arms Wide Open (album version)"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "title": "Best Part"
+    },
+    {
+      "artist": "Eagles",
+      "title": "Take It Easy"
+    },
+    {
+      "artist": "Eagles",
+      "title": "Seven Bridges Road"
+    },
+    {
+      "artist": "Elton John",
+      "title": "Don't Go Breaking My Heart"
+    },
+    {
+      "artist": "Eminem",
+      "title": "Love The Way You Lie"
+    },
+    {
+      "artist": "Fantasia Barrino",
+      "title": "When I See U"
+    },
+    {
+      "artist": "Footloose (1984 film)",
+      "title": "Footloose"
+    },
+    {
+      "artist": "Footloose (1984 film)",
+      "title": "Hurts So Good"
+    },
+    {
+      "artist": "Footloose (1984 film)",
+      "title": "Holding Out for a Hero"
+    },
+    {
+      "artist": "Frankie Valli & The Four Seasons",
+      "title": "Can't Take My Eyes Off You"
+    },
+    {
+      "artist": "Frozen (2013 film)",
+      "title": "Let It Go"
+    },
+    {
+      "artist": "Frozen (2013 film)",
+      "title": "Love Is an Open Door"
+    },
+    {
+      "artist": "Gorillaz",
+      "title": "Feel Good Inc."
+    },
+    {
+      "artist": "Grease (film)",
+      "title": "Hopelessly Devoted to You"
+    },
+    {
+      "artist": "Grease (film)",
+      "title": "You're the One That I Want"
+    },
+    {
+      "artist": "Hamilton",
+      "title": "You'll be Back"
+    },
+    {
+      "artist": "Hank Williams, Sr.",
+      "title": "Your Cheatin' Heart"
+    },
+    {
+      "artist": "Hannah Montana: The Movie",
+      "title": "The Climb"
+    },
+    {
+      "artist": "Heart (band)",
+      "title": "Alone"
+    },
+    {
+      "artist": "Hercules (1997 film)",
+      "title": "Go the Distance"
+    },
+    {
+      "artist": "James Bond",
+      "title": "Skyfall"
+    },
+    {
+      "artist": "Joan Jett",
+      "title": "I Love Rock 'n' Roll"
+    },
+    {
+      "artist": "John Anderson",
+      "title": "Swingin'"
+    },
+    {
+      "artist": "Lady Gaga",
+      "title": "Die with a Smile"
+    },
+    {
+      "artist": "Little Shop of Horrors (film)",
+      "title": "Suddenly, Seymour"
+    },
+    {
+      "artist": "Luis Fonsi",
+      "title": "Despacito"
+    },
+    {
+      "artist": "Meghan Trainor",
+      "title": "Like I'm Gonna Lose You"
+    },
+    {
+      "artist": "Måneskin",
+      "title": "Beggin'"
+    },
+    {
+      "artist": "Nitty Gritty Dirt Band",
+      "title": "Fishin' in the Dark"
+    },
+    {
+      "artist": "NSYNC",
+      "title": "Bye Bye Bye"
+    },
+    {
+      "artist": "O Brother, Where Art Thou?",
+      "title": "I Am a Man of Constant Sorrow"
+    },
+    {
+      "artist": "Pocahontas (1995 film)",
+      "title": "Colors of the Wind"
+    },
+    {
+      "artist": "Reba McEntire",
+      "title": "Does He Love You"
+    },
+    {
+      "artist": "Rihanna",
+      "title": "Stay"
+    },
+    {
+      "artist": "Shakira",
+      "title": "Waka Waka (This Time for Africa)"
+    },
+    {
+      "artist": "Spice Girls",
+      "title": "Wannabe"
+    },
+    {
+      "artist": "The Bodyguard",
+      "title": "I Will Always Love You"
+    },
+    {
+      "artist": "The Bodyguard",
+      "title": "I Have Nothing"
+    },
+    {
+      "artist": "The Chicks",
+      "title": "Goodbye Earl"
+    },
+    {
+      "artist": "The Divinyls",
+      "title": "I Touch Myself"
+    },
+    {
+      "artist": "The Highwaymen",
+      "title": "Highwayman"
+    },
+    {
+      "artist": "The Lion King (1994 film)",
+      "title": "Can You Feel the Love Tonight"
+    },
+    {
+      "artist": "The Lion King (1994 film)",
+      "title": "Hakuna Matata"
+    },
+    {
+      "artist": "The Lion King (1994 film)",
+      "title": "I Just Can't Wait to Be King"
+    },
+    {
+      "artist": "The Little Mermaid (1989 film)",
+      "title": "Part of Your World"
+    },
+    {
+      "artist": "The Little Mermaid (1989 film)",
+      "title": "Poor Unfortunate Souls"
+    },
+    {
+      "artist": "The Phantom of the Opera (musical)",
+      "title": "The Phantom of the Opera"
+    },
+    {
+      "artist": "The Phantom of the Opera (musical)",
+      "title": "The Music of the Night"
+    },
+    {
+      "artist": "The Stray Cats",
+      "title": "Stray Cat Strut"
+    },
+    {
+      "artist": "The Toadies",
+      "title": "Possum Kingdom"
+    },
+    {
+      "artist": "The Violent Femmes",
+      "title": "Blister in the Sun"
+    },
+    {
+      "artist": "The Wizard of Oz",
+      "title": "Somewhere Over the Rainbow"
+    },
+    {
+      "artist": "Toby Keith",
+      "title": "Courtesy of the Red, White and Blue (The Angry"
+    },
+    {
+      "artist": "Tom Petty",
+      "title": "Mary Jane's Last Dance"
+    },
+    {
+      "artist": "Victorious",
+      "title": "Take a Hint"
+    },
+    {
+      "artist": "Warren G",
+      "title": "Regulate"
+    },
+    {
+      "artist": "Weather Girls",
+      "title": "It's Raining Men"
+    },
+    {
+      "artist": "Wicked (musical)",
+      "title": "Defying Gravity"
+    },
+    {
+      "artist": "Zach Bryan",
+      "title": "I Remember Everything"
+    }
+  ],
+  "multiple_ranges": [
+    {
+      "artist": "Aladdin (1992 film)",
+      "title": "A Whole New World",
+      "ranges": [
+        "A3-F5",
+        "B2-G4"
+      ]
+    },
+    {
+      "artist": "Alison Krauss",
+      "title": "When You Say Nothing at All",
+      "ranges": [
+        "Bb3-C5",
+        "C4-D5"
+      ]
+    },
+    {
+      "artist": "Bob Marley",
+      "title": "Three Little Birds",
+      "ranges": [
+        "A3-A4",
+        "E3-A4"
+      ]
+    },
+    {
+      "artist": "Bob Seger",
+      "title": "Turn the Page",
+      "ranges": [
+        "D3-G4",
+        "G2-A#4"
+      ]
+    },
+    {
+      "artist": "Footloose (1984 film)",
+      "title": "Holding Out for a Hero",
+      "ranges": [
+        "A3-A5",
+        "E3-D#4"
+      ]
+    },
+    {
+      "artist": "Hamilton",
+      "title": "You'll be Back",
+      "ranges": [
+        "D3-C5",
+        "D3-A4"
+      ]
+    },
+    {
+      "artist": "Luis Fonsi",
+      "title": "Despacito",
+      "ranges": [
+        "E3-G4",
+        "F#3-B4"
+      ]
+    },
+    {
+      "artist": "Måneskin",
+      "title": "Beggin'",
+      "ranges": [
+        "B3-A5",
+        "B3-F#5"
+      ]
+    },
+    {
+      "artist": "NSYNC",
+      "title": "Bye Bye Bye",
+      "ranges": [
+        "G4-G#5",
+        "C#2-G#5"
+      ]
+    },
+    {
+      "artist": "O Brother, Where Art Thou?",
+      "title": "I Am a Man of Constant Sorrow",
+      "ranges": [
+        "F3-E4",
+        "D3-F4"
+      ]
+    },
+    {
+      "artist": "Sheb Wooley",
+      "title": "Purple People Eater",
+      "ranges": [
+        "D3-D4",
+        "A2-D5"
+      ]
+    },
+    {
+      "artist": "Tangled",
+      "title": "I See the Light",
+      "ranges": [
+        "C4-F5",
+        "G3-G5"
+      ]
+    },
+    {
+      "artist": "The Chicks",
+      "title": "Wide Open Spaces",
+      "ranges": [
+        "C4-G5",
+        "G#3-A4"
+      ]
+    },
+    {
+      "artist": "The Lion King (1994 film)",
+      "title": "Can You Feel the Love Tonight",
+      "ranges": [
+        "G2-G3",
+        "F3-G4"
+      ]
+    },
+    {
+      "artist": "The Lion King (1994 film)",
+      "title": "I Just Can't Wait to Be King",
+      "ranges": [
+        "D2-G3",
+        "D3-D4",
+        "C3-C4"
+      ]
+    },
+    {
+      "artist": "The Little Mermaid (1989 film)",
+      "title": "Poor Unfortunate Souls",
+      "ranges": [
+        "F3-D5",
+        "A3-E5"
+      ]
+    },
+    {
+      "artist": "The Phantom of the Opera (musical)",
+      "title": "The Music of the Night",
+      "ranges": [
+        "Ab3-Ab5",
+        "G#2-G#4"
+      ]
+    },
+    {
+      "artist": "Tom Petty",
+      "title": "Mary Jane's Last Dance",
+      "ranges": [
+        "E4-D5",
+        "E3-D4"
+      ]
+    },
+    {
+      "artist": "Village People",
+      "title": "Y.M.C.A.",
+      "ranges": [
+        "A2-C4",
+        "D3-F4"
+      ]
+    }
+  ],
+  "popularity_missing": [
+    {
+      "artist": "Garth Brooks",
+      "title": "Callin' Baton Rouge"
+    },
+    {
+      "artist": "Hocus Pocus (film)",
+      "title": "I Put a Spell on You"
+    },
+    {
+      "artist": "Garth Brooks",
+      "title": "To Make You Feel My Love"
+    }
+  ],
+  "source_conventions": {
+    "singing_carrots_note_index": "C1=1, MIDI=index+23; song range invariant under user-range parameters",
+    "myvocalrange_male_notation": "Published male notes are sounding pitch +12 semitones",
+    "calibration_probe": "Iris: user ranges 17..41 and 41..65 both returned D3-A4 and song indices 27..46"
+  }
+}
