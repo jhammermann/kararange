@@ -5,6 +5,14 @@ site with bundled song data, a keyboard-accessible range slider, and piano sampl
 
 ## Public hosting
 
+GitHub Pages address: <https://jhammermann.github.io/kararange/>.
+The workflow in `.github/workflows/pages.yml` publishes `dist/` after each push
+to `main`, or when run manually from the Actions tab. Enable it in repository
+**Settings → Pages → Build and deployment → Source → GitHub Actions**.
+GitHub Free requires a public repository; private repositories need a plan that
+supports Pages. The workflow sets SEO URLs from the actual Pages configuration,
+including a custom domain if one is added later.
+
 Publish **only `dist/`** as the site's document root. No build command, backend,
 API key, package installation, or runtime network lookup is required. All assets
 use relative paths, so hosting under a subdirectory also works.
